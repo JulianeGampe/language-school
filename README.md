@@ -1,3 +1,184 @@
+# Online Language School
+
+Description
+
+![Responsive Mockup](documentation/screenshots/amiresponsive.png)
+
+## User Stories
+
+
+## UX
+### Colour Scheme
+
+
+
+### Typography 
+
+Google Fonts .... 
+
+To provide visual cues icons from [Font Awesome](https://fontawesome.com/) have been used in ....
+
+### Wireframes
+
+Wireframes created with Balsamiq were used to plan the layout of the website.
+
+![Wireframe Homepage](documentation/wireframes/home.png)
+![Wireframe Homepage Mobile](documentation/wireframes/homemobile.png)
+
+
+## Features 
+
+### Existing Features
+
+- __Navigation Bar__
+
+    - ....
+
+![Navigation Bar](documentation/screenshots/navigationbar.png)
+![Navigation Bar Toggler](documentation/screenshots/navigationbartoggler.png)
+
+- __Home Page__
+
+  - The Home Page will allow the user to see the aim and purpose of the website.
+
+![Home Page](documentation/screenshots/homepage.png)
+
+
+
+### Features Left to Implement
+
+- __Feature__
+
+
+
+## Database Models
+
+ - The .... app require databases to store information. .... models have been build.
+
+ __Model Name__
+
+![Model](documentation/....)
+
+
+
+## Technologies Used
+
+- HTML 
+    - was used to structure the website semantically and display it in the browser.
+- [Bootstrap](https://getbootstrap.com/) 
+    - CSS framework used to build responsive design.
+- CSS 
+    - was used for additional presentation and style of the website.
+- JavaScript 
+    - was used to make the website interactive.
+- [Python](https://www.python.org/) 
+    - was used as programming language to write the code.
+- [Django](https://www.djangoproject.com/)
+    - framework has been used to build the project and the apps.
+- [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) 
+    - is used to create the forms in the application.
+- [TinyMCE](https://www.tiny.cloud/) 
+    - is used as the text editor.
+- [Gitpod](https://www.gitpod.io/) 
+    - was used for the development of the website.
+- [Github](https://github.com/) 
+    - was used to store the code online.
+- Git 
+    - was used for version control.
+- [The GitHub Projects Board](https://github.com/JulianeGampe/travel-blog/projects/1) 
+    - was used to keep track of tasks that are still to do or in progress or see tasks that are already done.
+- [The GitHub Issues tracker](https://github.com/JulianeGampe/travel-blog/issues) 
+    - was used to keep track of bugs and add solutions.
+- [Balsamiq](https://balsamiq.com/wireframes/) 
+    - was used to create the wireframes.
+- [Font Awesome](https://fontawesome.com/) 
+    - was used for the icons.
+- [Cloudinary](https://cloudinary.com/) 
+    - is used to store and upload the images.
+- [Heroku](https://www.heroku.com/home) 
+    - is used to deploy the application
+- [Google Fonts](https://fonts.google.com/)
+    - was used for the website font
+- [Adobe Color](https://color.adobe.com/create/image)
+    - was used for extracting the colors from the homepage image and for color testing.
+
+
+## Testing
+
+Due to the length of testing, you can see all tests in the [TESTING.md](TESTING.md) file.
+
+## Deployment
+
+- The site was deployed to Heroku.
+- Steps for deployment
+  - Create a new Heroku app
+
+  ![Create App](documentation/screenshots/createapp.png)
+  ![Create App Step 2](documentation/screenshots/createappstep2.png)
+
+  - Attach the database
+      1. click on the _Resources_ tab
+      2. in the add-ons bar search for Postgres and add it to the project
+  
+  ![Attach Database](documentation/screenshots/attachdatabase.png)
+
+  - Set up the _Config Vars_ 
+      1. DATABASE_URL is the connection to the Postgres database and is added to the project
+      2. add the SECRET_KEY from the django project
+      3. add the CLOUDINARY_URL
+      4. add the TINYMCE_API key
+
+  - Link the Heroku app to the repository in the _Deploy_ tab
+
+  ![Connect to GitHub](documentation/screenshots/connecttogithub.png)
+  ![Search Repository](documentation/screenshots/searchrepository.png)
+  ![Connect to GitHub result](documentation/screenshots/connecttogithubresult.png)
+
+  - Click on Deploy
+
+  ![Deploy](documentation/screenshots/deploy.png)
+  ![Deploy result](documentation/screenshots/deployresult.png)
+
+
+The live link can be found here - https://
+
+### Local Deployment
+
+If you would like to make a local copy of this repository, you can clone it by typing the following command in your IDE terminal:
+- `git clone https://github.com/JulianeGampe/language-school.git`
+
+Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/JulianeGampe/language-school)
+
+You must install the required packages for this application, using the command:
+- `pip3 install -r requirements.txt`
+
+You must set the keys for your environment variables in env.py:
+- os.environ["DATABASE_URL"] 
+- os.environ["SECRET_KEY"]
+- os.environ["CLOUDINARY_URL"]
+- os.environ["TINYMCE_API"]
+
+## Credits 
+
+### Content
+
+- This [YouTube Video](link) from .... have been used for help with ....
+- This article from [Name](link) was used to ....
+
+### Media 
+
+- The following website was used to ...
+- The image for ... has been taken from ....[Website](link)
+
+### Acknowledgements
+
+- I would like to thank ....
+
+
+
+
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 Welcome JulianeGampe,
