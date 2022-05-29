@@ -28,8 +28,12 @@ class Format(models.Model):
 
 class Course(models.Model):
     name = models.CharField(max_length=254)
-    level = models.ForeignKey('Level', null=True, blank=True, on_delete=models.SET_NULL)
-    format = models.ForeignKey('Format', null=True, blank=True, on_delete=models.SET_NULL)
+    level = models.ForeignKey(
+        'Level', null=True, blank=True, on_delete=models.SET_NULL
+    )
+    format = models.ForeignKey(
+        'Format', null=True, blank=True, on_delete=models.SET_NULL
+    )
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     startdate = models.DateField()
