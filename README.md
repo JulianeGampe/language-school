@@ -6,6 +6,45 @@ Description
 
 ## User Stories
 
+### Student
+#### Viewing and Navigation
+1.	As a student I can see the home page so that I get an overview of what I can learn.
+2.	As a student I can see and browse all available courses so that I can make a choice on which one to book.
+3.	As a student I can see the details of an individual course so that I can see all necessary information including a course description.
+4.	As a student I can see general information about the offered courses and language levels so that I can decide better which course is the right one for me.
+5.	As a student I can see information about the teachers so that I can reassure myself about the quality of the offered classes.
+6.	As a student I can see contact details of the language school so that I can get in touch in case I have additional questions.
+7.	As a student I can see a link to the schools Facebook page so that I can connect with them via social media.
+8.	As a student I can sign up for the schools newsletter so that I can receive newsletters with up-to-date information.
+
+#### User account
+9.	As a student I can register for an account so that I am able to view my profile. 
+10.	As a student I will receive a confirmation email after registering so that I know that my account registration was successful. 
+11.	As a student I can login and logout of my account so that I can access my personal information.
+12.	As a student I have a personalized user profile so that I can view the courses that I have booked.
+13.	As a student I can recover my account password so that I can access my account in case I forgot my password.
+
+#### Sorting and Searching
+14.	As a student I can sort the list of all available courses by level so that I can see courses matching my current language level.
+15.	As a student I can sort the list of all available courses by course format so that I can quickly choose courses from my preferred course format.
+16.	As a student I can sort the list of all available courses by the start date of the course so that I can choose a course that starts at a suitable time.
+17.	As a student I can sort the list of all available courses by the weekday on which the course will take place so that I can find a course that fits my schedule.
+
+18.	As a student I can search for a course by level or course format to find a specific course that I want to book.
+19.	As a student I can easily see what I have searched for so that I can quickly decide if my desired course is available.
+
+
+#### Purchase and Checkout
+20.	As a student I can see the course(s) that I have in my shopping bag so that I can see which course(s) I am about to purchase.
+21.	As a student I can remove a chosen course from my shopping bag so that I can make changes to my purchase before I checkout.
+22.	As a student I can easily enter my payment information so that I can check out quickly. 
+23.	As a student I can view an order confirmation after checkout so that I can verify I have booked the correct course(s).
+24.	As a student I will receive an email confirmation after purchase so that I can keep the confirmation of my course(s) for my records.
+
+### Admin
+25.	As an admin I can add new courses to the website so that I can immediately offer new courses once they are organized with the teachers.
+26.	As an admin I can edit/update a course so that I can change the status or correct any mistakes.
+27.	As an admin I can delete a course so that I can remove courses where the course date is already in the past.
 
 ## UX
 ### Colour Scheme
