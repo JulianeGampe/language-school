@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Our Courses</h2>
+
+{% for course in courses %}
+
+    {{ course.name }}
+    {{ course.level }}
+    {{ course.format }}
+    {{ course.price }}
+    {{ course.startdate }}
+    {{ course.weekday }}
+    {{ course.time }}
+
+{% endfor %}
+
+{% endblock content %}
