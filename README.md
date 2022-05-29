@@ -24,7 +24,24 @@ Wireframes created with Balsamiq were used to plan the layout of the website.
 
 ![Wireframe Homepage](documentation/wireframes/home.png)
 ![Wireframe Homepage Mobile](documentation/wireframes/homemobile.png)
+![Wireframe Our Courses](documentation/wireframes/ourcourses.png)
+![Wireframe Our Courses Mobile](documentation/wireframes/ourcoursesmobile.png)
+![Wireframe Course Detail](documentation/wireframes/coursedetail.png)
+![Wireframe Course Detail Mobile](documentation/wireframes/coursedetailmobile.png)
+![Wireframe Course Information](documentation/wireframes/courseinformation.png)
+![Wireframe Course Information Mobile](documentation/wireframes/courseinformationmobile.png)
+![Wireframe Our Teachers](documentation/wireframes/ourteachers.png)
+![Wireframe Our Teachers Mobile](documentation/wireframes/ourteachersmobile.png)
+![Wireframe Contact](documentation/wireframes/contact.png)
+![Wireframe Contact Mobile](documentation/wireframes/contactmobile.png)
+![Wireframe Shopping Bag](documentation/wireframes/shoppingbag.png)
+![Wireframe Shopping Bag Mobile](documentation/wireframes/shoppingbagmobile.png)
 
+### Flowchart
+
+A flowchart createt with Power Point was used to plan the models for the website.
+
+![Flowchart](documentation/wireframes/modelflowchart.png)
 
 ## Features 
 
