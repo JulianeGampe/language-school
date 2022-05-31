@@ -5,14 +5,11 @@ STATUS = ((1, "Bookable"), (0, "Booking closed"))
 
 
 class Level(models.Model):
-    name = models.CharField(max_length=254)
-    friendlyname = models.CharField(max_length=254, null=True, blank=True)
+    name = models.CharField(max_length=4)
+    part = models.PositiveIntegerField(default=1)
 
     def __str__(self):
         return self.name
-
-    def get_friendlyname(self):
-        return self.friendlyname
 
 
 class Format(models.Model):

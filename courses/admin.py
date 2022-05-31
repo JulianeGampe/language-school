@@ -22,8 +22,8 @@ class CourseAdmin(admin.ModelAdmin):
 
 class LevelAdmin(admin.ModelAdmin):
     list_display = (
-        'friendlyname',
         'name',
+        'part',
     )
 
 
