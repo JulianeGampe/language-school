@@ -6,13 +6,17 @@
 
 {% for course in courses %}
 
-    {{ course.name }}
-    {{ course.level }}
-    {{ course.format }}
-    {{ course.price }}
-    {{ course.startdate }}
-    {{ course.weekday }}
-    {{ course.time }}
+    Name: {{ course.name }}
+    </br>
+    Level: {{ course.level }}
+    Format: {{ course.format }}
+    Price: {{ course.price }} Euro
+    Startdate: {{ course.startdate }}
+    Weekday: {{ course.weekday }}
+    Starttime: {{ course.starttime }}
+    Duration: {{ course.duration }}
+    Maximum number of students: {{ course.limit }}
+    Status: {{ course.status }}
 
 {% endfor %}
 
