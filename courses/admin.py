@@ -29,7 +29,6 @@ class LevelAdmin(admin.ModelAdmin):
 
 class FormatAdmin(admin.ModelAdmin):
     list_display = (
-        'friendlyname',
         'name',
     )
 

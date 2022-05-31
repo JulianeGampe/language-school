@@ -17,13 +17,9 @@ class Level(models.Model):
 
 class Format(models.Model):
     name = models.CharField(max_length=254)
-    friendlyname = models.CharField(max_length=254, null=True, blank=True)
 
     def __str__(self):
         return self.name
-
-    def get_friendlyname(self):
-        return self.friendlyname
 
 
 class Course(models.Model):
