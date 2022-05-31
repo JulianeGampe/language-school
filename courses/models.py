@@ -41,6 +41,7 @@ class Course(models.Model):
     time = models.TimeField()
     duration = models.CharField(max_length=254)
     status = models.IntegerField(choices=STATUS, default=1)
+    limit = models.PositiveIntegerField(default=10)
 
     def __str__(self):
         return self.name
