@@ -9,7 +9,7 @@ class Level(models.Model):
     part = models.PositiveIntegerField(default=1)
 
     def __str__(self):
-        return self.name
+        return f'{self.name} Part {self.part}'
 
 
 class Format(models.Model):
