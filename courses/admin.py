@@ -14,6 +14,7 @@ class CourseAdmin(admin.ModelAdmin):
         'starttime',
         'duration',
         'status',
+        'limit',
     )
 
     ordering = ('name',)
