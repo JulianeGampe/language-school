@@ -38,7 +38,7 @@ class Course(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     startdate = models.DateField()
     weekday = models.CharField(max_length=254)
-    time = models.TimeField()
+    starttime = models.TimeField()
     duration = models.CharField(max_length=254)
     status = models.IntegerField(choices=STATUS, default=1)
     limit = models.PositiveIntegerField(default=10)
