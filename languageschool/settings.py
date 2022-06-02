@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'cloudinary',
     'courses',
+    'bag',
 ]
 
 MIDDLEWARE = [
