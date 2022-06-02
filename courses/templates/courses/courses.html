@@ -6,7 +6,7 @@
 
 {% for course in courses %}
 
-    Name: {{ course.name }}
+    <a href="{% url 'coursedetail' course.id %}">Name: {{ course.name }}</a>
     </br>
     Level: {{ course.level }}
     Format: {{ course.format }}
