@@ -20,5 +20,13 @@
         Status: {{ course.status }}
         </div>
     </div>
+    <div class="row">
+        <form action="{% url 'addbag' course.id %}" method="POST">
+            {% csrf_token %}
+            <a href="{% url 'allcourses' %}">Find additional courses</a>
+            <input type="submit" class="btn btn-black" value="Add to Shopping Bag">
+            <input type="hidden" name="redirecturl" value="{{ request.path }}">
+        </form>
+    </div>
 </div>
 {% endblock content %}
