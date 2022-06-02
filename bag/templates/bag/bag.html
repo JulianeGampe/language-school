@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col mt-5">
+
+            <h2>Shopping Bag</h2>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="container">
+            {% if bagitems %}
+            <p>Your selected courses:</p>
+            {% else %}
+            <p>No courses selected yet</p>
+            <a href="{% url 'allcourses' %}">Choose a course</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
