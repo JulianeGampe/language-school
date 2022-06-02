@@ -2,22 +2,30 @@
 
 {% block content %}
 
-<h2>Our Courses</h2>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col mt-5">
+            
+        <h2>Our Courses</h2>
 
-{% for course in courses %}
+        {% for course in courses %}
 
-    <a href="{% url 'coursedetail' course.id %}">Name: {{ course.name }}</a>
-    </br>
-    Level: {{ course.level }}
-    Format: {{ course.format }}
-    Price: {{ course.price }} Euro
-    Startdate: {{ course.startdate }}
-    Weekday: {{ course.weekday }}
-    Starttime: {{ course.starttime }}
-    Duration: {{ course.duration }}
-    Maximum number of students: {{ course.limit }}
-    Status: {{ course.status }}
+            <a href="{% url 'coursedetail' course.id %}">Name: {{ course.name }}</a>
+            </br>
+            Level: {{ course.level }}
+            Format: {{ course.format }}
+            Price: {{ course.price }} Euro
+            Startdate: {{ course.startdate }}
+            Weekday: {{ course.weekday }}
+            Starttime: {{ course.starttime }}
+            Duration: {{ course.duration }}
+            Maximum number of students: {{ course.limit }}
+            Status: {{ course.status }}
+            </br>
+        {% endfor %}
 
-{% endfor %}
+        </div>
+    </div>
+</div>
 
 {% endblock content %}

@@ -2,21 +2,23 @@
 
 {% block content %}
 
+<div class="container">
+    <div class="row mt-5">
+        <div class="col mt-5">
 
-
-    Name: {{ course.name }}
-    </br>
-    Level: {{ course.level }}
-    Format: {{ course.format }}
-    Description: {{ course.description }}
-    Price: {{ course.price }} Euro
-    Startdate: {{ course.startdate }}
-    Weekday: {{ course.weekday }}
-    Starttime: {{ course.starttime }}
-    Duration: {{ course.duration }}
-    Maximum number of students: {{ course.limit }}
-    Status: {{ course.status }}
-
-
-
+        Name: {{ course.name }}
+        </br>
+        Level: {{ course.level }}
+        Format: {{ course.format }}
+        Description: {{ course.description }}
+        Price: {{ course.price }} Euro
+        Startdate: {{ course.startdate }}
+        Weekday: {{ course.weekday }}
+        Starttime: {{ course.starttime }}
+        Duration: {{ course.duration }}
+        Maximum number of students: {{ course.limit }}
+        Status: {{ course.status }}
+        </div>
+    </div>
+</div>
 {% endblock content %}
