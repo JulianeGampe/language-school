@@ -14,6 +14,11 @@
         <div class="container">
             {% if bagitems %}
             <p>Your selected courses:</p>
+            {% for item in bagitems %}
+                {{ item.course.name }}
+                {{ item.course.price }} Euro
+                </br>
+            {% endfor %}
             {% else %}
             <p>No courses selected yet</p>
             <a href="{% url 'allcourses' %}">Choose a course</a>
