@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+<div class="container mb-5">
+    <div class="row mt-5">
+        <div class="col mt-5">
+
+        <p>Order summary:</p>
+        {% for item in bagitems %}
+        {{ item.course.name }}
+        {{ item.course.price }} Euro
+        {{ item.quantity }} course
+        </br>
+        {% endfor %}
+        Order total: {{ total }} Euro
+        </br>
+        </br>
+        <p>Please fill out the form below to complete the order</p>
+        <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+            {% csrf_token %}
+            <fieldset class="rounded px-3 mb-5">
+                <legend class="fieldset-label small text-black px-2 w-auto">Details</legend>
+                {{ orderform.fullname | as_crispy_field }}
+                {{ orderform.email | as_crispy_field }}
+            </fieldset>
+            <fieldset class="rounded px-3 mb-5">
+                <legend class="fieldset-label small text-black px-2 w-auto">Delivery</legend>
+                {{ orderform.phonenumber | as_crispy_field }}
+                {{ orderform.streetaddress1 | as_crispy_field }}
+                {{ orderform.streetaddress2 | as_crispy_field }}
+                {{ orderform.city | as_crispy_field }}
+                {{ orderform.county | as_crispy_field }}
+                {{ orderform.postcode | as_crispy_field }}
+                {{ orderform.country | as_crispy_field }}
+            </fieldset>
+
+
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
