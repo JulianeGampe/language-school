@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
+from courses.models import Course
 
 
 def viewbag(request):
@@ -21,3 +22,12 @@ def addbag(request, course_id):
 
     request.session['bag'] = bag
     return redirect(redirecturl)
+
+
+def removebag(request, course_id):
+    course = get_object_or_404(Course, pk=course_id)
+    bag = request.session.get('bag', {})
+    request.session['bag'] = bag
+    if request.method == "POST":
+        bag.pop(course_id)
+    return redirect('viewbag')
