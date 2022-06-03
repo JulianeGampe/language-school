@@ -24,6 +24,7 @@
                     <button class="btn btn-signup btn-md" type="submit">Remove from bag</button>
                 </form>
             {% endfor %}
+            <a href="{% url 'checkout' %}" class="btn btn-black">Secure Checkout</a>
             {% else %}
             <p>No courses selected yet</p>
             <a href="{% url 'allcourses' %}">Choose a course</a>
