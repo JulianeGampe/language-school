@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'courses',
     'bag',
     'checkout',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -63,6 +64,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'languageschool.urls'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
