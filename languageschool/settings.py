@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'courses',
     'bag',
+    'checkout',
 ]
 
 MIDDLEWARE = [
