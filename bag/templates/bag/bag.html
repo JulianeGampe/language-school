@@ -19,6 +19,10 @@
                 {{ item.course.price }} Euro
                 {{ item.quantity }} course
                 </br>
+                <form action="{% url 'removebag' item.course_id %}" method="post">
+                    {% csrf_token %}
+                    <button class="btn btn-signup btn-md" type="submit">Remove from bag</button>
+                </form>
             {% endfor %}
             {% else %}
             <p>No courses selected yet</p>
