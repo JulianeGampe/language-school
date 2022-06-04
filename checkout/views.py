@@ -1,6 +1,8 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.conf import settings
 from .forms import OrderForm
+from .models import Order, OrderLineItem
+from courses.models import Course
 from bag.contexts import bagcontents
 import stripe
 
@@ -9,27 +11,81 @@ def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
-    bag = request.session.get('bag', {})
-    if not bag:
-        return redirect(reverse('allcourses'))
+    if request.method == 'POST':
+        bag = request.session.get('bag', {})
 
-    currentbag = bagcontents(request)
-    total = currentbag['total']
-    stripe_total = round(total * 100)
-    stripe.api_key = stripe_secret_key
-    intent = stripe.PaymentIntent.create(
-        amount=stripe_total,
-        currency=settings.STRIPE_CURRENCY
-    )
+        form_data = {
+            'fullname': request.POST['fullname'],
+            'email': request.POST['email'],
+            'phonenumber': request.POST['phonenumber'],
+            'country': request.POST['country'],
+            'postcode': request.POST['postcode'],
+            'city': request.POST['city'],
+            'streetaddress1': request.POST['streetaddress1'],
+            'streetaddress2': request.POST['streetaddress2'],
+            'county': request.POST['county'],
+        }
+        orderform = OrderForm(form_data)
+        if orderform.is_valid():
+            order = orderform.save()
+            for course_id, course_data in bag.items():
+                try:
+                    course = Course.objects.get(id=course_id)
+                    if isinstance(course_data, int):
+                        orderlineitem = OrderLineItem(
+                            order=order,
+                            course=course,
+                            quantity=course_data,
+                        )
+                        orderlineitem.save()
+                except Course.DoesNotExist:
+                    order.delete()
+                    return redirect(reverse('viewbag'))
 
-    print(intent)
+            request.session['save_info'] = 'save-info' in request.POST
+            return redirect(
+                reverse('checkoutsuccess', args=[order.ordernumber])
+            )
 
-    orderform = OrderForm()
-    template = 'checkout/checkout.html'
+    else:
+        bag = request.session.get('bag', {})
+        if not bag:
+            return redirect(reverse('allcourses'))
+
+        currentbag = bagcontents(request)
+        total = currentbag['total']
+        stripe_total = round(total * 100)
+        stripe.api_key = stripe_secret_key
+        intent = stripe.PaymentIntent.create(
+            amount=stripe_total,
+            currency=settings.STRIPE_CURRENCY
+        )
+
+        orderform = OrderForm()
+
+        template = 'checkout/checkout.html'
+        context = {
+            'orderform': orderform,
+            'stripe_public_key': stripe_public_key,
+            'client_secret': intent.client_secret,
+        }
+
+        return render(request, template, context)
+
+
+def checkoutsuccess(request, ordernumber):
+    """
+    Handle successful checkouts
+    """
+    save_info = request.session.get('save_info')
+    order = get_object_or_404(Order, ordernumber=ordernumber)
+
+    if 'bag' in request.session:
+        del request.session['bag']
+
+    template = 'checkout/checkoutsuccess.html'
     context = {
-        'orderform': orderform,
-        'stripe_public_key': stripe_public_key,
-        'client_secret': intent.client_secret,
+        'order': order,
     }
 
     return render(request, template, context)
