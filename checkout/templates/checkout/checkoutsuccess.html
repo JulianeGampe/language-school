@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+    <div class="container mb-5">
+        <div class="row mt-5">
+            <div class="col mt-5">
+                <hr>
+                <h2>Thank You</h2>
+                <hr>
+                <p>Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
+            </div>
+        </div>
+
+        <div class="row">
+			<div class="col">
+				<a href="{% url 'allcourses' %}" class="btn btn-black">
+					<span class="text-uppercase">Search for more courses</span>
+				</a>
+			</div>
+		</div>
+    </div>
+    
+{% endblock %}
