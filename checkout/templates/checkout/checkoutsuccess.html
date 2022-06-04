@@ -13,6 +13,42 @@
             </div>
         </div>
 
+
+        <div class="row">
+            <div class="col">
+            Your order number: {{ order.ordernumber }} <br>
+            Order Date: {{ order.date }} <br>
+            </div>
+        </div>
+
+        {% for item in order.lineitems.all %}
+        <div class="row">
+            <div class="col">
+                Your chosen course: {{ item.course.name }} <br>
+                Course start date: {{ item.course.startdate }} <br>
+            </div>
+        </div>
+        {% endfor %}
+
+        <div class="row">
+            <div class="col">
+            Name: {{ order.fullname }} <br>
+            Adress Line 1: {{ order.streetaddress1 }} <br>
+            {% if order.street_address2 %}
+            Adress Line 2: {{ order.streetaddress2 }} <br>
+            {% endif %}
+            {% if order.county %}
+            County: {{ order.county }} <br>
+            {% endif %}
+            {% if order.postcode %}
+            Postcode: {{ order.postcode }} <br>
+            {% endif %}
+            Country: {{ order.country }} <br>
+            Phonenumber: {{ order.phonenumber }} <br>
+            Order total: {{ order.total }} <br>
+            </div>
+        </div>
+
         <div class="row">
 			<div class="col">
 				<a href="{% url 'allcourses' %}" class="btn btn-black">
@@ -21,5 +57,5 @@
 			</div>
 		</div>
     </div>
-    
+
 {% endblock %}
