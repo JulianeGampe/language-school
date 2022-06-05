@@ -84,7 +84,24 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY
         )
 
-        orderform = OrderForm()
+        # Prefill the form with any info the user maintains in their profile
+        if request.user.is_authenticated:
+            try:
+                profile = UserProfile.objects.get(user=request.user)
+                orderform = OrderForm(initial={
+                    'email': profile.user.email,
+                    'phonenumber': profile.default_phonenumber,
+                    'country': profile.default_country,
+                    'postcode': profile.default_postcode,
+                    'city': profile.default_city,
+                    'streetaddress1': profile.default_streetaddress1,
+                    'streetaddress2': profile.default_streetaddress2,
+                    'county': profile.default_county,
+                })
+            except UserProfile.DoesNotExist:
+                orderform = OrderForm()
+        else:
+            orderform = OrderForm()
 
         template = 'checkout/checkout.html'
         context = {
