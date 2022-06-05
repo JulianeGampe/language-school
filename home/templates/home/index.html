@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="container mb-5">
+    <div class="row mt-5">
+        <div class="col mt-5">
+
+        <h2>Welcome to Online Language School.</h2>
+        <p>Learn German with live online courses.</p>
+        <p>Browse our <a href="{% url 'allcourses' %}">courses</a></p>
+
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
