@@ -17,7 +17,30 @@
         </div>
         <div class="col mt-5">
             <h2>My booked courses</h2>
-            {{ orders }}
+            <table class="table">
+                <thead>
+                    <th>Level</th>
+                    <th>Format</th>
+                    <th>Startdate</th>
+                    <th>Weekday</th>
+                    <th>Starttime</th>
+                    <th>Order Number</th>
+                </thead>
+                <tbody>
+                    {% for order in orders %}
+                    {% for item in order.lineitems.all %}
+                    <tr>
+                        <td>{{ item.course.level }}</td>
+                        <td>{{ item.course.format }}</td>
+                        <td>{{ item.course.startdate }}</td>
+                        <td>{{ item.course.weekday }}</td>
+                        <td>{{ item.course.starttime }}</td>
+                        <td><a href="{% url 'orderhistory' order.ordernumber %}">{{ order.ordernumber|truncatechars:6 }}</a></td>
+                    </tr>
+                    {% endfor %}
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
