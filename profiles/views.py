@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import UserProfile
 from .forms import UserProfileForm
+from checkout.models import Order
 
 
 def profile(request):
@@ -21,4 +22,15 @@ def profile(request):
         'form': form,
         'orders': orders,
     }
+    return render(request, template, context)
+
+
+def orderhistory(request, ordernumber):
+    order = get_object_or_404(Order, ordernumber=ordernumber)
+
+    template = 'checkout/checkoutsuccess.html'
+    context = {
+        'order': order,
+    }
+
     return render(request, template, context)
