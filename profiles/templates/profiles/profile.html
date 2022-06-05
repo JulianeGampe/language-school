@@ -8,9 +8,16 @@
 <div class="container mb-5">
     <div class="row mt-5">
         <div class="col mt-5">
-
-                {{ profile }}
-
+            <h2>My Profile</h2>
+            <form action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button class="btn btn-black">Update Profile</button>
+            </form>
+        </div>
+        <div class="col mt-5">
+            <h2>My booked courses</h2>
+            {{ orders }}
         </div>
     </div>
 </div>
