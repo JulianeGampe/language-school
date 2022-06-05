@@ -4,6 +4,8 @@ from django.conf import settings
 from .forms import OrderForm
 from .models import Order, OrderLineItem
 from courses.models import Course
+from profiles.forms import UserProfileForm
+from profiles.models import UserProfile
 from bag.contexts import bagcontents
 import stripe
 import json
@@ -100,6 +102,27 @@ def checkoutsuccess(request, ordernumber):
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, ordernumber=ordernumber)
+
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        # Attach the user's profile to the order
+        order.userprofile = profile
+        order.save()
+
+        # Save the user's info
+        if save_info:
+            profile_data = {
+                'default_phonenumber': order.phonenumber,
+                'default_country': order.country,
+                'default_postcode': order.postcode,
+                'default_city': order.city,
+                'default_streetaddress1': order.streetaddress1,
+                'default_streetaddress2': order.streetaddress2,
+                'default_county': order.county,
+            }
+            userprofile_form = UserProfileForm(profile_data, instance=profile)
+            if userprofile_form.is_valid():
+                userprofile_form.save()
 
     if 'bag' in request.session:
         del request.session['bag']
