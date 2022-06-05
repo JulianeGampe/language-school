@@ -7,10 +7,15 @@ from django.conf import settings
 from django_countries.fields import CountryField
 
 from courses.models import Course
+from profiles.models import UserProfile
 
 
 class Order(models.Model):
     ordernumber = models.CharField(max_length=32, null=False, editable=False)
+    userprofile = models.ForeignKey(
+        UserProfile, on_delete=models.SET_NULL, null=True, blank=True,
+        related_name='orders'
+    )
     fullname = models.CharField(max_length=60, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
     phonenumber = models.CharField(max_length=20, null=False, blank=False)
