@@ -32,6 +32,9 @@
     <div class="row">
         <a class="btn btn-black" href="{% url 'editcourse' course.id %}">Edit Course</a>
     </div>
+    <div class="row">
+        <a class="btn btn-black" href="{% url 'deletecourse' course.id %}">Delete Course</a>
+    </div>
     {% endif %}
 </div>
 {% endblock content %}
