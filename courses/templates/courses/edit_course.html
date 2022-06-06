@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container mb-5">
+    <div class="row mt-5">
+        <div class="col mt-5">
+            <h2>Edit course</h2>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col mt-5 mb-5">
+            <form action="{% url 'editcourse' course.id %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ editform|crispy }}
+                <button class="btn btn-black" type="submit">Edit course</button>
+                <a href="{% url 'allcourses' %}" class="btn btn-black">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
