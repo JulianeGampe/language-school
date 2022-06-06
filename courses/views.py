@@ -67,3 +67,19 @@ def editcourse(request, course_id):
     }
 
     return render(request, template, context)
+
+
+def deletecourse(request, course_id):
+    """
+    View to delete a course.
+    """
+    course = get_object_or_404(Course, pk=course_id)
+    template = "courses/delete_course.html"
+    context = {
+        'course': course
+    }
+
+    if request.method == 'POST':
+        course.delete()
+        return redirect('allcourses')
+    return render(request, template, context)
