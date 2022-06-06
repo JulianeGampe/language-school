@@ -21,6 +21,17 @@
         </div>
     </div>
     <div class="row">
+
+        {% for order in orders %}
+        {% for item in order.lineitems.all %}
+        {% if item.course.name == course.name %}
+            You have already booked this course.
+            <a href="{% url 'orderhistory' order.ordernumber %}">{{ order.ordernumber|truncatechars:6 }}</a>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+
+
         {% if course.limit > 0 %}
         <form action="{% url 'addbag' course.id %}" method="POST">
             {% csrf_token %}
@@ -32,6 +43,7 @@
         {% endif %}
         <a href="{% url 'allcourses' %}">Search for other courses</a>
     </div>
+
     {% if request.user.is_superuser %}
     <div class="row">
         <a class="btn btn-black" href="{% url 'editcourse' course.id %}">Edit Course</a>
