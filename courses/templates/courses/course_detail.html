@@ -16,17 +16,21 @@
         Weekday: {{ course.weekday }}
         Starttime: {{ course.starttime }}
         Duration: {{ course.duration }}
-        Maximum number of students: {{ course.limit }}
+        Places left: {{ course.limit }}
         Status: {{ course.status }}
         </div>
     </div>
     <div class="row">
+        {% if course.limit > 0 %}
         <form action="{% url 'addbag' course.id %}" method="POST">
             {% csrf_token %}
-            <a href="{% url 'allcourses' %}">Find additional courses</a>
             <input type="submit" class="btn btn-black" value="Add to Shopping Bag">
             <input type="hidden" name="redirecturl" value="{{ request.path }}">
         </form>
+        {% else %}
+        <p>This course is already booked out.</p>
+        {% endif %}
+        <a href="{% url 'allcourses' %}">Search for other courses</a>
     </div>
     {% if request.user.is_superuser %}
     <div class="row">
