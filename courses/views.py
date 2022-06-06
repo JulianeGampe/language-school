@@ -44,3 +44,26 @@ def addcourse(request):
         'form': form
     }
     return render(request, template, context)
+
+
+def editcourse(request, course_id):
+    """
+    View to edit a course
+    """
+    course = get_object_or_404(Course, pk=course_id)
+    if request.method == 'POST':
+        editform = CourseForm(request.POST, instance=course)
+        if editform.is_valid():
+            editform.save()
+            return redirect('allcourses')
+
+    else:
+        editform = CourseForm(instance=course)
+
+    template = 'courses/edit_course.html'
+    context = {
+        'editform': editform,
+        'course': course
+    }
+
+    return render(request, template, context)
