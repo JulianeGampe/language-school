@@ -7,6 +7,7 @@ from courses.models import Course
 from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
 from bag.contexts import bagcontents
+from bag.views import removebag
 import stripe
 import json
 
@@ -32,6 +33,22 @@ def checkout(request):
 
     if request.method == 'POST':
         bag = request.session.get('bag', {})
+
+        """
+        Reduces the course limit by one
+        Prevents booking and removes item from bag
+        if the limit is already 0, due to another student booking
+        at the same time
+        """
+        for course_id, course_data in bag.items():
+            course = Course.objects.get(id=course_id)
+            courselimit = Course.objects.get(id=course_id)
+            if courselimit.limit > 0:
+                courselimit.limit = courselimit.limit - 1
+                courselimit.save()
+            else:
+                removebag(request, course_id)
+                return redirect(reverse('viewbag'))
 
         form_data = {
             'fullname': request.POST['fullname'],
