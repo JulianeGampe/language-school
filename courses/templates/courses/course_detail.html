@@ -28,5 +28,10 @@
             <input type="hidden" name="redirecturl" value="{{ request.path }}">
         </form>
     </div>
+    {% if request.user.is_superuser %}
+    <div class="row">
+        <a class="btn btn-black" href="{% url 'editcourse' course.id %}">Edit Course</a>
+    </div>
+    {% endif %}
 </div>
 {% endblock content %}
