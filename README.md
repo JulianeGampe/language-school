@@ -44,7 +44,7 @@ Description
 ### Admin
 25.	As an admin I can add new courses to the website so that I can immediately offer new courses once they are organized with the teachers.
 26.	As an admin I can edit/update a course so that I can change the status or correct any mistakes.
-27.	As an admin I can delete a course so that I can remove courses where the course date is already in the past.
+27.	As an admin I can delete a course so that I can remove a course I have accidentally created.
 
 ## UX
 ### Colour Scheme
