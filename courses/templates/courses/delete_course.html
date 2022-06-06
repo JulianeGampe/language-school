@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mb-5">
+    <div class="row mt-5">
+        <div class="col mt-5">
+            <h2>Delete course</h2>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col mt-5">
+            <p>
+                WARNING <br>
+            </p>
+            <p>
+                This should only be used if the course was created accidentally.
+                To remove a past course from the publicly visible course list please go to 
+                <a href="{% url 'editcourse' course.id %}">Edit Course</a> 
+                and change the status to "Booking closed".
+            <p>
+            <p>
+                Do you really want to delete this course?
+            </p>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col mt-5 mb-5">
+            <form action="{% url 'deletecourse' course.id %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <button class="btn btn-black" type="submit">Delete permanently</button>
+                <a href="{% url 'allcourses' %}" class="btn btn-black">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
