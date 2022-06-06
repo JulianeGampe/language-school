@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Course
 from .forms import CourseForm
+from profiles.models import UserProfile
 
 
 def allcourses(request):
@@ -20,9 +21,13 @@ def coursedetail(request, course_id):
     View to display details of one course
     """
     course = get_object_or_404(Course, pk=course_id)
+    profile = get_object_or_404(UserProfile, user=request.user)
+    orders = profile.orders.all()
+
     template = 'courses/course_detail.html'
     context = {
-        'course': course
+        'course': course,
+        'orders': orders,
     }
     return render(request, template, context)
 
