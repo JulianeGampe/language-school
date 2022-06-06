@@ -7,9 +7,8 @@
         <div class="col mt-5">
             
         <h2>Our Courses</h2>
-
         {% for course in courses %}
-
+        {% if course.status == 1 %}
             <a href="{% url 'coursedetail' course.id %}">Name: {{ course.name }}</a>
             </br>
             Level: {{ course.level }}
@@ -22,7 +21,29 @@
             Maximum number of students: {{ course.limit }}
             Status: {{ course.status }}
             </br>
+        {% endif %}
         {% endfor %}
+        
+
+        {% if request.user.is_superuser %}
+        <h2>Courses with status "Booking closed"</h2>
+        {% for course in courses %}
+        {% if course.status == 0 %}
+            <a href="{% url 'coursedetail' course.id %}">Name: {{ course.name }}</a>
+            </br>
+            Level: {{ course.level }}
+            Format: {{ course.format }}
+            Price: {{ course.price }} Euro
+            Startdate: {{ course.startdate }}
+            Weekday: {{ course.weekday }}
+            Starttime: {{ course.starttime }}
+            Duration: {{ course.duration }}
+            Maximum number of students: {{ course.limit }}
+            Status: {{ course.status }}
+            </br>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
 
         </div>
     </div>
