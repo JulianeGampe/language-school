@@ -31,6 +31,13 @@
         {% endfor %}
         {% endfor %}
 
+        {% if bagitems %}
+        {% for item in bagitems %}
+        {% if item.course.id == course.id %}
+        <p>You already have this item in your bag. It cannot be added twice.</p>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
 
         {% if course.limit > 0 %}
         <form action="{% url 'addbag' course.id %}" method="POST">
