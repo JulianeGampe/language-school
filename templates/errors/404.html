@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h2>404 ERROR</h2>
+    <p>Page not found</p>
+    <p>Back to home page</p>
+    <a href="{% url 'home' %}" class="btn btn-black">Home</a>
+{% endblock %}
