@@ -21,14 +21,20 @@ def coursedetail(request, course_id):
     View to display details of one course
     """
     course = get_object_or_404(Course, pk=course_id)
-    profile = get_object_or_404(UserProfile, user=request.user)
-    orders = profile.orders.all()
+    if request.user.is_authenticated:
+        profile = get_object_or_404(UserProfile, user=request.user)
+        orders = profile.orders.all()
 
-    template = 'courses/course_detail.html'
-    context = {
-        'course': course,
-        'orders': orders,
-    }
+        template = 'courses/course_detail.html'
+        context = {
+            'course': course,
+            'orders': orders,
+        }
+    else:
+        template = 'courses/course_detail.html'
+        context = {
+            'course': course,
+        }
     return render(request, template, context)
 
 
