@@ -46,6 +46,9 @@ Description
 26.	As an admin I can edit/update a course so that I can change the status or correct any mistakes.
 27.	As an admin I can delete a course so that I can remove a course I have accidentally created.
 
+### Student + Admin
+28. As a student/admin I can see messages on the screen so that I know the result of my input.
+
 ## UX
 ### Colour Scheme
 
