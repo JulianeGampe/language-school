@@ -20,8 +20,10 @@
         Status: {{ course.status }}
         </div>
     </div>
+    <br>
     <div class="row">
 
+    {% if user.is_authenticated %}
         {% for order in orders %}
         {% for item in order.lineitems.all %}
         {% if item.course.name == course.name %}
@@ -38,18 +40,27 @@
         {% endif %}
         {% endfor %}
         {% endif %}
-
+        
         {% if course.limit > 0 %}
         <form action="{% url 'addbag' course.id %}" method="POST">
             {% csrf_token %}
             <input type="submit" class="btn btn-black" value="Add to Shopping Bag">
             <input type="hidden" name="redirecturl" value="{{ request.path }}">
         </form>
+        <p>Important: The name on the booking has to match the name of the course participant.</p>
+        <p>To book a course for a different person, we recommend creating another account.</p>
         {% else %}
         <p>This course is already booked out.</p>
         {% endif %}
-        <a href="{% url 'allcourses' %}">Search for other courses</a>
     </div>
+
+    {% else %}
+        {% if course.limit > 0 %}
+        <p>Please <a href="{% url 'account_login' %}">login</a> to book this course</p>
+        {% else %}
+        <p>This course is already booked out.</p>
+        {% endif %}
+    {% endif %}
 
     {% if request.user.is_superuser %}
     <div class="row">
@@ -59,5 +70,12 @@
         <a class="btn btn-black" href="{% url 'deletecourse' course.id %}">Delete Course</a>
     </div>
     {% endif %}
+
+    <div class="row">
+        <div class="col">
+            <a href="{% url 'allcourses' %}">Search for other courses</a>
+        </div>
+    </div>
+
 </div>
 {% endblock content %}
