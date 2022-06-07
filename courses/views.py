@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
 from .models import Course
 from .forms import CourseForm
 from profiles.models import UserProfile
@@ -38,6 +39,7 @@ def coursedetail(request, course_id):
     return render(request, template, context)
 
 
+@login_required
 def addcourse(request):
     """
     View to add a course from the frontend
@@ -57,6 +59,7 @@ def addcourse(request):
     return render(request, template, context)
 
 
+@login_required
 def editcourse(request, course_id):
     """
     View to edit a course
@@ -80,6 +83,7 @@ def editcourse(request, course_id):
     return render(request, template, context)
 
 
+@login_required
 def deletecourse(request, course_id):
     """
     View to delete a course.

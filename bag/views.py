@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from courses.models import Course
 
 
+@login_required
 def viewbag(request):
     """
     View to render the shopping bag page
@@ -10,6 +12,7 @@ def viewbag(request):
     return render(request, template)
 
 
+@login_required
 def addbag(request, course_id):
     """
     Add the chosen course to the bag
@@ -24,6 +27,7 @@ def addbag(request, course_id):
     return redirect(redirecturl)
 
 
+@login_required
 def removebag(request, course_id):
     course = get_object_or_404(Course, pk=course_id)
     bag = request.session.get('bag', {})
