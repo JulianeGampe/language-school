@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpR
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from django.conf import settings
+from django.contrib import messages
 from .forms import OrderForm
 from .models import Order, OrderLineItem
 from courses.models import Course
@@ -25,6 +26,11 @@ def cache_checkout_data(request):
         })
         return HttpResponse(status=200)
     except Exception as e:
+        messages.error(
+            request,
+            'Sorry, your payment cannot be processed right now. \
+                Please try again later.'
+        )
         return HttpResponse(content=e, status=400)
 
 
@@ -50,6 +56,9 @@ def checkout(request):
                 courselimit.save()
             else:
                 removebag(request, course_id)
+                messages.error(
+                    request, 'We are sorry, the course is fully booked.'
+                )
                 return redirect(reverse('viewbag'))
 
         form_data = {
@@ -81,6 +90,11 @@ def checkout(request):
                         )
                         orderlineitem.save()
                 except Course.DoesNotExist:
+                    messages.error(
+                        request,
+                        'One of the courses in your bag \
+                            was not found in our database'
+                    )
                     order.delete()
                     return redirect(reverse('viewbag'))
 
@@ -88,10 +102,15 @@ def checkout(request):
             return redirect(
                 reverse('checkoutsuccess', args=[order.ordernumber])
             )
+        else:
+            messages.error(request, 'There was an error with your form.')
 
     else:
         bag = request.session.get('bag', {})
         if not bag:
+            messages.error(
+                request, "There's nothing in your bag at the moment"
+            )
             return redirect(reverse('allcourses'))
 
         currentbag = bagcontents(request)
