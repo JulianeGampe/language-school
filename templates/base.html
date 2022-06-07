@@ -93,6 +93,18 @@
     </header>
     <!-- main content -->
     <main>
+        {% if messages %}
+        {% for message in messages %}
+        <div class="row">
+            <div class="col-md-8 mt-5 offset-md-2">
+                <div class="alert {{ message.tags }} alert-dismissable fade show" id="msg" role="alert">
+                {{ message|safe }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
         {% block content %}
         <!-- content goes here-->
         {% endblock content%}
@@ -115,6 +127,18 @@
             </div>
         </div>
     </footer>
+
+    <!-- timeout function for django contrib messages -->
+    <script>
+        /* jshint esversion: 8 */
+        setTimeout(function() {
+            let messages = document.getElementById("msg");
+            if (messages) {
+                let alert = new bootstrap.Alert(messages);
+                alert.close();
+            }
+        }, 3000);
+    </script>
 
     {% block postloadjs %}
     {% endblock %}
