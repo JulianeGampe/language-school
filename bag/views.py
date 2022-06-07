@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from courses.models import Course
 
 
@@ -24,6 +25,7 @@ def addbag(request, course_id):
     bag[course_id] = quantity
 
     request.session['bag'] = bag
+    messages.success(request, 'The course is in your shopping bag.')
     return redirect(redirecturl)
 
 
@@ -34,4 +36,5 @@ def removebag(request, course_id):
     request.session['bag'] = bag
     if request.method == "POST":
         bag.pop(course_id)
+        messages.success(request, 'The course was removed from your bag.')
     return redirect('viewbag')
