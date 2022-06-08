@@ -27,7 +27,7 @@ Description
 #### Sorting and Searching
 14.	As a student I can sort the list of all available courses by level so that I can see courses matching my current language level.
 15.	As a student I can sort the list of all available courses by course format so that I can quickly choose courses from my preferred course format.
-16.	As a student I can sort the list of all available courses by the start date of the course so that I can choose a course that starts at a suitable time.
+16.	As a student I can sort the list of all available courses by the start date of the course so that I can choose a course that starts on a suitable date.
 17.	As a student I can sort the list of all available courses by the weekday on which the course will take place so that I can find a course that fits my schedule.
 
 18.	As a student I can search for a course by level or course format to find a specific course that I want to book.
