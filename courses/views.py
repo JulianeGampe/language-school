@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from .models import Course
 from .forms import CourseForm
 from profiles.models import UserProfile
@@ -60,11 +61,20 @@ def addcourse(request):
     """
     View to add a course from the frontend
     """
+    if not request.user.is_superuser:
+        messages.error(request, 'Access denied.')
+        return redirect('home')
+
     if request.method == 'POST':
         form = CourseForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, 'You have successfully added the course')
             return redirect('allcourses')
+        else:
+            messages.error(
+                request, 'Failed to add course. Please check the form'
+            )
     else:
         form = CourseForm()
 
@@ -80,12 +90,23 @@ def editcourse(request, course_id):
     """
     View to edit a course
     """
+    if not request.user.is_superuser:
+        messages.error(request, 'Access denied.')
+        return redirect('home')
+
     course = get_object_or_404(Course, pk=course_id)
     if request.method == 'POST':
         editform = CourseForm(request.POST, instance=course)
         if editform.is_valid():
             editform.save()
+            messages.success(
+                request, 'You have successfully updated the course'
+            )
             return redirect('allcourses')
+        else:
+            messages.error(
+                request, 'Failed to update course. Please check the form'
+            )
 
     else:
         editform = CourseForm(instance=course)
@@ -104,6 +125,10 @@ def deletecourse(request, course_id):
     """
     View to delete a course.
     """
+    if not request.user.is_superuser:
+        messages.error(request, 'Access denied.')
+        return redirect('home')
+
     course = get_object_or_404(Course, pk=course_id)
     template = "courses/delete_course.html"
     context = {
@@ -112,5 +137,6 @@ def deletecourse(request, course_id):
 
     if request.method == 'POST':
         course.delete()
+        messages.success(request, 'Course successfully deleted!')
         return redirect('allcourses')
     return render(request, template, context)

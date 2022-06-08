@@ -180,6 +180,8 @@ def checkoutsuccess(request, ordernumber):
             if userprofile_form.is_valid():
                 userprofile_form.save()
 
+    messages.success(request, 'Thank you, your order is completed')
+
     if 'bag' in request.session:
         del request.session['bag']
 
