@@ -4,8 +4,23 @@
 
 <div class="container">
     <div class="row mt-5">
+
         <div class="col mt-5">
-            
+            <div class="sort-select-wrapper w-80">
+                <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                    <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                    <option value="weekday_asc" {% if current_sorting == 'weekday_asc' %}selected{% endif %}>Weekday</option>
+                    <option value="format_desc" {% if current_sorting == 'format_desc' %}selected{% endif %}>Format (A to Z)</option>
+                    <option value="format_asc" {% if current_sorting == 'format_asc' %}selected{% endif %}>Format (Z to A)</option>
+                    <option value="level_asc" {% if current_sorting == 'level_asc' %}selected{% endif %}>Level (A1.1 - C1.2)</option>
+                    <option value="level_desc" {% if current_sorting == 'level_desc' %}selected{% endif %}>Level (C1.2 - A1.1)</option>
+                    <option value="startdate_asc" {% if current_sorting == 'startdate_asc' %}selected{% endif %}>Startdate (next first)</option>
+                    <option value="startdate_desc" {% if current_sorting == 'startdate_desc' %}selected{% endif %}>Startdate (furthest first)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col mt-5">
         <h2>Our Courses</h2>
         {% for course in courses %}
         {% if course.status == 1 %}
@@ -48,5 +63,43 @@
         </div>
     </div>
 </div>
+
+
+
+<!-- 
+    The following code was taken from Code Institute:
+    https://github.com/Code-Institute-Solutions/boutique_ado_v1/blob/250e2c2b8e43cccb56b4721cd8a8bd4de6686546/products/templates/products/products.html
+-->
+
+<script type="text/javascript">
+    /* jshint esversion: 11 */
+    $('.btt-link').click(function(e) {
+        window.scrollTo(0,0)
+    })
+</script>
+
+<script type="text/javascript">
+    /* jshint esversion: 11 */
+    $('#sort-selector').change(function() {
+        var selector = $(this);
+        var currentUrl = new URL(window.location);
+
+        var selectedVal = selector.val();
+        if(selectedVal != "reset"){
+            var sort = selectedVal.split("_")[0];
+            var direction = selectedVal.split("_")[1];
+
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
+
+            window.location.replace(currentUrl);
+        } else {
+            currentUrl.searchParams.delete("sort");
+            currentUrl.searchParams.delete("direction");
+
+            window.location.replace(currentUrl);
+        }
+    })
+</script>
 
 {% endblock content %}
