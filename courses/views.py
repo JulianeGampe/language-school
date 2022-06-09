@@ -1,6 +1,7 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.db.models import Q
 from .models import Course
 from .forms import CourseForm
 from profiles.models import UserProfile
@@ -13,6 +14,7 @@ def allcourses(request):
     courses = Course.objects.all()
     sort = None
     direction = None
+    query = None
 
     if request.GET:
         if 'sort' in request.GET:
@@ -24,12 +26,24 @@ def allcourses(request):
                     sortkey = f'-{sortkey}'
             courses = courses.order_by(sortkey)
 
+        if 'q' in request.GET:
+            query = request.GET['q']
+            if not query:
+                messages.error(request, "Please enter a search term.")
+                return redirect(reverse('allcourses'))
+
+            queries = Q(
+                level__name__icontains=query
+            ) | Q(format__name__icontains=query) | Q(weekday__icontains=query)
+            courses = courses.filter(queries)
+
     current_sorting = f'{sort}_{direction}'
 
     template = 'courses/courses.html'
     context = {
         'courses': courses,
-        'current_sorting': current_sorting
+        'current_sorting': current_sorting,
+        'search_term': query
     }
     return render(request, template, context)
 
