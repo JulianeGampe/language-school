@@ -10,6 +10,7 @@ urlpatterns = [
     path('bag/', include('bag.urls')),
     path('checkout/', include('checkout.urls')),
     path('profile/', include('profiles.urls')),
+    path('teachers/', include('teachers.urls')),
 ]
 handler404 = 'languageschool.views.handler404'
 handler500 = 'languageschool.views.handler500'
