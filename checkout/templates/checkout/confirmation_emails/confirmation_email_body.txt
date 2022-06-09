@@ -1,0 +1,19 @@
+Hello {{ order.fullname }}!
+
+This is a confirmation of your order at Learn German Online.
+
+Order Number: {{ order.ordernumber }}
+Order Date: {{ order.date }}
+
+Order Total: EUR {{ order.total }}
+
+You can view your order and your booked courses anytime by logging in to our website
+and navigating to your profile page.
+
+If you have any questions, feel free to contact us.
+
+We are looking forward to seeing you soon in class!
+
+Sincerely,
+
+Learn German Online
