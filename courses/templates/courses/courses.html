@@ -3,6 +3,28 @@
 {% block content %}
 
 <div class="container">
+    <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 mt-5">
+        <form method="GET" action="{% url 'allcourses' %}">
+            <div class="input-group w-100">
+                <p>Search our courses for Level (i.e. A1.1) or format (i.e. Standard)</p>
+                <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Enter search term, i.e. A1.1">
+                <div class="input-group-append">
+                    <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                        <span class="icon">
+                            <i class="fas fa-search"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-12 col-md-6 order-md-first">
+        <p class="text-muted mt-3 text-center text-md-left">
+            {{ courses|length }} Courses{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+        </p>
+    </div>
+
+
     <div class="row mt-5">
 
         <div class="col mt-5">
