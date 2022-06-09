@@ -1,7 +1,11 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404, HttpResponse
+)
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.contrib import messages
+from django.template.loader import render_to_string
+from django.core.mail import send_mail
 from .forms import OrderForm
 from .models import Order, OrderLineItem
 from courses.models import Course
@@ -160,6 +164,7 @@ def checkoutsuccess(request, ordernumber):
                 userprofile_form.save()
 
     messages.success(request, 'Thank you, your order is completed')
+    confirmationemail(request, order)
 
     if 'bag' in request.session:
         del request.session['bag']
@@ -170,3 +175,30 @@ def checkoutsuccess(request, ordernumber):
     }
 
     return render(request, template, context)
+
+
+"""
+The following code was taken from Code Institute
+def _send_confirmation_email(self, order)
+https://github.com/Code-Institute-Solutions/boutique_ado_v1/blob/250e2c2b8e43cccb56b4721cd8a8bd4de6686546/checkout/webhook_handler.py
+"""
+
+
+def confirmationemail(request, order):
+    """
+    Send a confirmation email after checkout
+    """
+    cust_email = order.email
+    subject = render_to_string(
+        'checkout/confirmation_emails/confirmation_email_subject.txt',
+        {'order': order})
+    body = render_to_string(
+        'checkout/confirmation_emails/confirmation_email_body.txt',
+        {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
+
+    send_mail(
+        subject,
+        body,
+        settings.DEFAULT_FROM_EMAIL,
+        [cust_email]
+    )
