@@ -1,3 +1,9 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def teachers(request):
+    template = 'teachers/teachers.html'
+    context = {
+
+    }
+    return render(request, template, context)
