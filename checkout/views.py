@@ -12,7 +12,6 @@ from courses.models import Course
 from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
 from bag.contexts import bagcontents
-from bag.views import removebag
 import stripe
 import json
 
@@ -22,27 +21,32 @@ def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
-    if request.method == 'POST':
-        bag = request.session.get('bag', {})
+    bag = request.session.get('bag', {})
 
+    """
+    Prevents booking if the limit is already 0, due to another student having
+    the course in the shopping bag at the same time and checking out first
+    """
+    for course_id, course_data in bag.items():
+        courseinbag = Course.objects.get(id=course_id)
+        if courseinbag.limit < 1:
+            messages.error(
+                request, f'We are sorry, \
+                    the course "{ courseinbag.name }" is fully booked.'
+            )
+            if 'bag' in request.session:
+                del request.session['bag']
+            return redirect(reverse('viewbag'))
+
+    if request.method == 'POST':
         """
         Reduces the course limit by one
-        Prevents booking and removes item from bag
-        if the limit is already 0, due to another student booking
-        at the same time
         """
         for course_id, course_data in bag.items():
-            course = Course.objects.get(id=course_id)
             courselimit = Course.objects.get(id=course_id)
             if courselimit.limit > 0:
                 courselimit.limit = courselimit.limit - 1
                 courselimit.save()
-            else:
-                removebag(request, course_id)
-                messages.error(
-                    request, 'We are sorry, the course is fully booked.'
-                )
-                return redirect(reverse('viewbag'))
 
         form_data = {
             'fullname': request.POST['fullname'],
