@@ -11,6 +11,7 @@ urlpatterns = [
     path('checkout/', include('checkout.urls')),
     path('profile/', include('profiles.urls')),
     path('teachers/', include('teachers.urls')),
+    path('courseinfo/', include('courseinfo.urls')),
 ]
 handler404 = 'languageschool.views.handler404'
 handler500 = 'languageschool.views.handler500'
