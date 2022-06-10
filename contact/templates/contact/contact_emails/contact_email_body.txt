@@ -1,0 +1,15 @@
+Hello {{ form.name.value }}!
+
+Thank you for filling in the form on our website.
+
+You have sent us the following message:
+
+Reason: {{ form.reason.value }}
+Message:
+{{ form.message.value }}
+
+We will get back to you as soon as possible.
+
+Sincerely,
+
+Learn German Online
