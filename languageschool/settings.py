@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'home',
     'teachers',
     'courseinfo',
+    'contact',
 ]
 
 MESSAGE_TAGS = {
