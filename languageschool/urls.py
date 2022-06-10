@@ -12,6 +12,7 @@ urlpatterns = [
     path('profile/', include('profiles.urls')),
     path('teachers/', include('teachers.urls')),
     path('courseinfo/', include('courseinfo.urls')),
+    path('contact/', include('contact.urls')),
 ]
 handler404 = 'languageschool.views.handler404'
 handler500 = 'languageschool.views.handler500'
