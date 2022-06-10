@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 
@@ -22,6 +23,16 @@
         <p>Get to know <a href="{% url 'teachers' %}">our teachers</a>.</p>
         <p><a href="{% url 'contact' %}">Contact us</a> with individual questions.</p>
 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mb-5">
+            <p>Subscribe to our Newsletter</p>
+            <form action="{% url 'home' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ newsletterform|crispy }}
+                <button class="btn btn-black" type="submit">Subscribe</button>
+            </form>
         </div>
     </div>
 </div>
