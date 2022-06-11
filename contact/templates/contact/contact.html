@@ -5,39 +5,42 @@
 {% block content %}
 
 
-<div class="container mb-5">
+<div class="container">
     <div class="row mt-5">
-        <div class="col mt-5">
+        <div class="col-md-8 offset-md-1">
             <h2>Contact Us</h2>
         </div>
     </div>
 
     <div class="row mt-5">
-        <div class="col mt-5">
-            <p>Sent us an email</p>
+        <div class="col-md-8 offset-md-1 mt-5 text-center">
+            Sent us an email:
         </div>
-        <div class="col mt-5">
-            <p>learngermanonline@example.com</p>
+    </div>
+    <div class="row">
+        <div class="col-md-8 offset-md-1 text-center fw-bold">
+            learngermanonline@example.com
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-8 offset-md-1 text-center">
+            Find us on Facebook:
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 offset-md-1 text-center fw-bold">
+            www.facebook.com
         </div>
     </div>
 
-    <div class="row">
-        <div class="col">
-            <p>Find us on Facebook</p>
-        </div>
-        <div class="col">
-            <p>www.facebook.com</p>
+    <div class="row mt-5">
+        <div class="col-md-8 offset-md-1 fw-bold">
+            Or fill in our Contact Form:
         </div>
     </div>
 
-    <div class="row">
-        <div class="col">
-            <p>Fill in our Contact Form below</p>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col mb-5">
+    <div class="row mt-3">
+        <div class="col-md-8 offset-md-1 mb-5">
             <form action="{% url 'contact' %}" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form|crispy }}
