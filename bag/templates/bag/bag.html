@@ -4,33 +4,47 @@
 
 <div class="container">
     <div class="row mt-5">
-        <div class="col mt-5">
-
+        <div class="col-md-8 offset-md-1">
             <h2>Shopping Bag</h2>
-
         </div>
     </div>
-    <div class="row">
-        <div class="container">
-            {% if bagitems %}
-            <p>Your selected courses:</p>
-            {% for item in bagitems %}
-                {{ item.course.name }}
-                {{ item.course.price }} Euro
-                {{ item.quantity }} course
-                </br>
-                <form action="{% url 'removebag' item.course_id %}" method="post">
-                    {% csrf_token %}
-                    <button class="btn btn-signup btn-md" type="submit">Remove from bag</button>
-                </form>
-            {% endfor %}
-            <a href="{% url 'checkout' %}" class="btn btn-black">Secure Checkout</a>
-            {% else %}
-            <p>No courses selected yet</p>
+    {% if bagitems %}
+    <div class="row mt-5">
+        <div class="col-md-6 offset-md-1 fw-bold fs-4">
+            <p>Your selected courses:</p> 
+        </div>
+        <div class="col-md-2">
+            <a href="{% url 'checkout' %}" class="btn btn-black">Secure Checkout {{ total }} Euro</a>
+        </div>
+    </div>
+    {% for item in bagitems %}
+    <div class="row mb-2">
+        <div class="col-md-8 offset-md-1">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.course.name }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ item.course.level }} || {{ item.course.format }} || {{ item.course.startdate }}</h6>
+                    <p class="card-text">{{ item.course.price }} Euro</p>
+                    <form action="{% url 'removebag' item.course_id %}" method="post">
+                        {% csrf_token %}
+                        <button class="btn btn-signup btn-md" type="submit">Remove from bag</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    <div class="col-md-8 offset-md-1">
+        <a href="{% url 'allcourses' %}">Search for more courses</a>
+    </div>
+    {% else %}
+    <div class="row mt-5">
+        <div class="col-md-8 offset-md-1 fs-5 fw-bold">
+            <p>No courses selected yet</p> 
             <a href="{% url 'allcourses' %}">Choose a course</a>
-            {% endif %}
         </div>
     </div>
+    {% endif %}
 </div>
 
 {% endblock %}
