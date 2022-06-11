@@ -2,80 +2,74 @@
 
 {% block content %}
 
+
 <div class="container">
-    <div class="row mt-5">
-        <div class="col mt-5">
-
-        Name: {{ course.name }}
-        </br>
-        Level: {{ course.level }}
-        Format: {{ course.format }}
-        Description: {{ course.description }}
-        Price: {{ course.price }} Euro
-        Startdate: {{ course.startdate }}
-        Weekday: {{ course.weekday }}
-        Starttime: {{ course.starttime }}
-        Duration: {{ course.duration }}
-        Places left: {{ course.limit }}
-        Status: {{ course.status }}
-        </div>
-    </div>
-    <br>
-    <div class="row">
-
-    {% if user.is_authenticated %}
-        {% for order in orders %}
-        {% for item in order.lineitems.all %}
-        {% if item.course.name == course.name %}
-            You have already booked this course.
-            <a href="{% url 'orderhistory' order.ordernumber %}">{{ order.ordernumber|truncatechars:6 }}</a>
-        {% endif %}
-        {% endfor %}
-        {% endfor %}
-
-        {% if bagitems %}
-        {% for item in bagitems %}
-        {% if item.course.id == course.id %}
-        <p>You already have this item in your bag. It cannot be added twice.</p>
-        {% endif %}
-        {% endfor %}
-        {% endif %}
-        
-        {% if course.limit > 0 %}
-        <form action="{% url 'addbag' course.id %}" method="POST">
-            {% csrf_token %}
-            <input type="submit" class="btn btn-black" value="Add to Shopping Bag">
-            <input type="hidden" name="redirecturl" value="{{ request.path }}">
-        </form>
-        <p>Important: The name on the booking has to match the name of the course participant.</p>
-        <p>To book a course for a different person, we recommend creating another account.</p>
-        {% else %}
-        <p>This course is already booked out.</p>
-        {% endif %}
-    </div>
-
-    {% else %}
-        {% if course.limit > 0 %}
-        <p>Please <a href="{% url 'account_login' %}">login</a> to book this course</p>
-        {% else %}
-        <p>This course is already booked out.</p>
-        {% endif %}
-    {% endif %}
-
-    {% if request.user.is_superuser %}
-    <div class="row">
-        <a class="btn btn-black" href="{% url 'editcourse' course.id %}">Edit Course</a>
-    </div>
-    <div class="row">
-        <a class="btn btn-black" href="{% url 'deletecourse' course.id %}">Delete Course</a>
-    </div>
-    {% endif %}
-
-    <div class="row">
-        <div class="col">
+    <div class="card col-md-8 offset-md-1 mt-5">
+        <div class="card-body">
+            <h5 class="card-title">{{ course.name }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ course.level }} {{ course.format }}</h6>
+            <p class="card-text">{{ course.description }}</p>
+            <p class="card-text">
+                Startdate: {{ course.startdate }}<br>
+                Weekday: {{ course.weekday }}<br>
+                Starttime: {{ course.starttime }}<br>
+                Duration: {{ course.duration }}<br>
+                Places left: {{ course.limit }}<br>
+                Price: {{ course.price }} Euro
+            </p>
+            {% if user.is_authenticated %}
+                <ul class="list-group list-group-flush">
+                    {% for order in orders %}
+                    {% for item in order.lineitems.all %}
+                    {% if item.course.name == course.name %}
+                    <li class="list-group-item">You have already booked this course.
+                    <a href="{% url 'orderhistory' order.ordernumber %}">{{ order.ordernumber|truncatechars:6 }}</a></li>
+                    {% endif %}
+                    {% endfor %}
+                    {% endfor %}
+                    <li class="list-group-item"></li>
+                    
+                    {% if bagitems %}
+                    {% for item in bagitems %}
+                    {% if item.course.id == course.id %}
+                    <li class="list-group-item">You already have this item in your bag. It cannot be added twice.</li>
+                    {% endif %}
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% if course.limit > 0 %}
+                <form action="{% url 'addbag' course.id %}" method="POST">
+                    {% csrf_token %}
+                    <input type="submit" class="btn btn-black" value="Add to Shopping Bag">
+                    <input type="hidden" name="redirecturl" value="{{ request.path }}">
+                </form>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Important: The name on the booking has to match the name of the course participant.</li>
+                    <li class="list-group-item">To book a course for a different person, we recommend creating another account.</li>
+                </ul>
+                {% else %}
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">This course is already booked out.</li>
+                </ul>
+                {% endif %}
+            {% else %}
+                {% if course.limit > 0 %}
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Please <a href="{% url 'account_login' %}">login</a> to book this course</p></li>
+                </ul>
+                {% else %}
+                <ul>
+                    <li class="list-group-item">This course is already booked out.</li>
+                </ul>
+                {% endif %}
+            {% endif %}
+            {% if request.user.is_superuser %}
+                <a class="btn btn-black" href="{% url 'editcourse' course.id %}">Edit Course</a>
+                <a class="btn btn-black" href="{% url 'deletecourse' course.id %}">Delete Course</a>
+            {% endif %}
             <a href="{% url 'allcourses' %}">Search for other courses</a>
         </div>
     </div>
-
 </div>
+
 {% endblock content %}
