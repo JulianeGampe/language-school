@@ -4,37 +4,43 @@
 
 {% block content %}
 
-
-<div class="container mb-5">
+<div class="container">
     <div class="row mt-5">
-        <div class="col mt-5">
-            <h2>My Profile</h2>
+        <div class="col-lg-5 offset-lg-1">
+            <h2 class="pb-3">My Profile</h2>
             <form action="{% url 'profile' %}" method="POST" id="profile-update-form">
                 {% csrf_token %}
                 {{ form|crispy }}
                 <button class="btn btn-black">Update Profile</button>
             </form>
         </div>
-        <div class="col mt-5">
+        <div class="col-lg-5">
             <h2>My booked courses</h2>
             <table class="table">
                 <thead>
                     <th>Level</th>
                     <th>Format</th>
                     <th>Startdate</th>
-                    <th>Weekday</th>
-                    <th>Starttime</th>
+                    <th>
+                        Weekday<br>
+                        Starttime
+                    </th>
                     <th>Order Number</th>
                 </thead>
                 <tbody>
                     {% for order in orders %}
                     {% for item in order.lineitems.all %}
                     <tr>
-                        <td>{{ item.course.level }}</td>
+                        <td>
+                            {{ item.course.level.name }}<br>
+                            Pt.{{ item.course.level.part }}
+                        </td>
                         <td>{{ item.course.format }}</td>
                         <td>{{ item.course.startdate }}</td>
-                        <td>{{ item.course.weekday }}</td>
-                        <td>{{ item.course.starttime }}</td>
+                        <td>
+                            {{ item.course.weekday }}<br>
+                            {{ item.course.starttime }}
+                        </td>
                         <td><a href="{% url 'orderhistory' order.ordernumber %}">{{ order.ordernumber|truncatechars:6 }}</a></td>
                     </tr>
                     {% endfor %}
