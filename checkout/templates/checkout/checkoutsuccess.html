@@ -3,59 +3,92 @@
 
 
 {% block content %}
-    <div class="container mb-5">
-        <div class="row mt-5">
-            <div class="col mt-5">
-                <hr>
-                <h2>Thank You</h2>
+<div class="container mb-5">
+    <div class="row mt-5">
+        <div class="col-md-8 offset-md-1">
+                <h2>Thank You!</h2>
                 <hr>
                 <p>Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
             </div>
         </div>
 
-
-        <div class="row">
-            <div class="col">
-            Your order number: {{ order.ordernumber }} <br>
-            Order Date: {{ order.date }} <br>
-            </div>
+    <div class="row mt-5">
+        <div class="col-md-8 offset-md-1">
+            <p class="fs-5">Order Number and Order Date</p>
         </div>
-
-        {% for item in order.lineitems.all %}
-        <div class="row">
-            <div class="col">
-                Your chosen course: {{ item.course.name }} <br>
-                Course start date: {{ item.course.startdate }} <br>
-            </div>
-        </div>
-        {% endfor %}
-
-        <div class="row">
-            <div class="col">
-            Name: {{ order.fullname }} <br>
-            Adress Line 1: {{ order.streetaddress1 }} <br>
-            {% if order.street_address2 %}
-            Adress Line 2: {{ order.streetaddress2 }} <br>
-            {% endif %}
-            {% if order.county %}
-            County: {{ order.county }} <br>
-            {% endif %}
-            {% if order.postcode %}
-            Postcode: {{ order.postcode }} <br>
-            {% endif %}
-            Country: {{ order.country }} <br>
-            Phonenumber: {{ order.phonenumber }} <br>
-            Order total: {{ order.total }} <br>
-            </div>
-        </div>
-
-        <div class="row">
-			<div class="col">
-				<a href="{% url 'allcourses' %}" class="btn btn-black">
-					<span class="text-uppercase">Search for more courses</span>
-				</a>
-			</div>
-		</div>
     </div>
+
+    <div class="row mt-3">
+        <div class="col-md-8 offset-md-1">
+            <div class="card">
+                <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{ order.ordernumber }}</li>
+                <li class="list-group-item">{{ order.date }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-8 offset-md-1">
+            <p class="fs-5">Your booked course(s)</p>
+        </div>
+    </div>
+    
+    {% for item in order.lineitems.all %}
+    <div class="row mt-3">
+        <div class="col-md-8 offset-md-1">
+            <div class="card">
+                <div class="card-header">
+                    {{ item.course.name }}
+                </div>
+                <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{ item.course.level }}</li>
+                <li class="list-group-item">{{ item.course.startdate }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    
+    <div class="row mt-5">
+        <div class="col-md-8 offset-md-1">
+            <p class="fs-5">Your data</p>
+        </div>
+    </div>
+    
+    <div class="row mt-3">
+        <div class="col-md-8 offset-md-1">
+            <div class="card">
+                <div class="card-header">
+                    {{ order.fullname }}
+                </div>
+                <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{ order.streetaddress1 }}</li>
+                {% if order.street_address2 %}
+                <li class="list-group-item">{{ order.streetaddress2 }}</li>
+                {% endif %}
+                {% if order.county %}
+                <li class="list-group-item">{{ order.county }}</li>
+                {% endif %}
+                {% if order.postcode %}
+                <li class="list-group-item">{{ order.postcode }}</li>
+                {% endif %}
+                <li class="list-group-item">{{ order.country }}</li>
+                <li class="list-group-item">{{ order.phonenumber }}</li>
+                <li class="list-group-item">Order total: {{ order.total }} Euro</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-8 offset-md-1">
+			<a href="{% url 'allcourses' %}" class="btn btn-black">
+				Search for more courses
+			</a>
+		</div>
+	</div>
+</div>
 
 {% endblock %}
