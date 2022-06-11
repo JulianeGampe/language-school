@@ -2,14 +2,14 @@
 
 {% block content %}
 
-<div class="container mb-5">
+<div class="container">
     <div class="row mt-5">
-        <div class="col mt-5">
+        <div class="col-md-8 offset-md-1">
             <h2>Delete course</h2>
         </div>
     </div>
     <div class="row mt-5">
-        <div class="col mt-5">
+        <div class="col-md-8 offset-md-1">
             <p>
                 WARNING <br>
             </p>
@@ -25,7 +25,7 @@
         </div>
     </div>
     <div class="row mt-5">
-        <div class="col mt-5 mb-5">
+        <div class="col-md-8 offset-md-1">
             <form action="{% url 'deletecourse' course.id %}" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <button class="btn btn-black" type="submit">Delete permanently</button>
