@@ -7,28 +7,43 @@
 
 <div class="container mb-5">
     <div class="row mt-5">
-        <div class="col mt-5">
-
-        <p>Order summary:</p>
-        {% for item in bagitems %}
-        {{ item.course.name }}
-        {{ item.course.price }} Euro
-        {{ item.quantity }} course
-        </br>
-        {% endfor %}
-        Order total: {{ total }} Euro
-        </br>
-        </br>
-        <p>Please fill out the form below to complete the order</p>
+        <div class="col-md-8 offset-md-1">
+        <h2>Order summary:</h2>
+        </div>
+    </div>
+    {% for item in bagitems %}
+    <div class="row">
+        <div class="col-md-8 offset-md-1">
+            <div class="card mb-2">
+                <ul class="list-group list-group-flush">
+                <li class="list-group-item fw-bold">{{ item.course.name }}</li>
+                <li class="list-group-item">{{ item.course.level }} || {{ item.course.startdate}} || {{ item.course.price }} Euro</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    <div class="row">
+        <div class="col-md-8 offset-md-1 fw-bold">
+            Order total: {{ total }} Euro
+        </div>
+    </div>
+    <div class="row mt-5 fs-4">
+        <div class="col-md-8 offset-md-1">
+            <p>Please fill out the form below to complete the order</p>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-md-8 offset-md-1">
         <form action="{% url 'checkout' %}" method="POST" id="payment-form">
             {% csrf_token %}
-            <fieldset class="rounded px-3 mb-5">
+            <fieldset class="rounded px-3 mb-3">
                 <legend class="fieldset-label small text-black px-2 w-auto">Details</legend>
                 {{ orderform.fullname | as_crispy_field }}
                 {{ orderform.email | as_crispy_field }}
             </fieldset>
             <fieldset class="rounded px-3 mb-5">
-                <legend class="fieldset-label small text-black px-2 w-auto">Delivery</legend>
+                <legend class="fieldset-label small text-black px-2 w-auto">Address</legend>
                 {{ orderform.phonenumber | as_crispy_field }}
                 {{ orderform.streetaddress1 | as_crispy_field }}
                 {{ orderform.streetaddress2 | as_crispy_field }}
@@ -49,30 +64,33 @@
                 <input type="hidden" value="{{ client_secret }}" name="client_secret">
             </fieldset>
 
-            <div class="submit-button text-right mt-5 mb-2">                    
+            <div class="submit-button mt-2 mb-2 px-3">
+                <p class="small text-danger my-0 mb-3">
+                    <span class="icon">
+                        <i class="fas fa-exclamation"></i>
+                    </span>
+                    <span>Your card will be charged <strong>Euro {{ total|floatformat:2 }}</strong></span>
+                </p>
+                <p class="small text-danger my-0 mb-3">
+                    <span class="icon">
+                        <i class="fas fa-exclamation"></i>
+                    </span>
+                    <span>Disclaimer: This is a project website. All courses are fictional. <strong>DO NOT</strong> enter credit card information. No liability will be assumed for entered credit card information or charges.</span>
+                </p>                  
                 <a href="{% url 'viewbag' %}" class="btn btn-outline-black rounded-0">
                     <span class="icon">
-                        <i class="fas fa-chevron-left"></i>
+                        <i class="fas fa-backward"></i>
                     </span>
                     <span class="font-weight-bold">Adjust Bag</span>
                 </a>
                 <button id="submit-button" class="btn btn-black rounded-0">
                     <span class="font-weight-bold">Complete Order</span>
                     <span class="icon">
-                        <i class="fas fa-lock"></i>
+                        <i class="fas fa-credit-card"></i>
                     </span>
                 </button>
-                <p class="small text-danger my-0">
-                    <span class="icon">
-                        <i class="fas fa-exclamation-circle"></i>
-                    </span>
-                    <span>Your card will be charged <strong>Euro{{ total|floatformat:2 }}</strong></span>
-                </p>
             </div>
         </form>
-
-
-
         </div>
     </div>
 </div>
