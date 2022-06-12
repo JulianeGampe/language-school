@@ -4,6 +4,19 @@ body {
     padding-bottom: 70px;
 }
 
+/* styling for links */
+a {
+    color: #262626;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #262626;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
 /* color styling */
 nav,
 footer {
@@ -19,6 +32,8 @@ footer {
 .btn:hover {
     background-color: #8C0303;
     color: #FFF;
+    font-weight: 400;
+    text-decoration: none;
 }
 
 /* color for footer disclaimer and checkout page disclaimer */
