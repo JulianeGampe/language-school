@@ -25,8 +25,13 @@
                 </div>
             </form>
             <p class="text-muted text-center">
-                {{ courses|length }} Courses{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+                {{ coursecount }} Courses{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
             </p>
+            {% if request.user.is_superuser %}
+            <p class="text-muted text-center">
+               + {{ coursecountclosed }} "Booking closed" Courses{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+            </p>
+            {% endif %}
             <p class="mt-3">
                 <a href="{% url 'allcourses' %}" class="btn">Reset search and display all courses.</a>
             </p>
@@ -46,8 +51,6 @@
             </div>
         </div>
     </div>
-
-
 
     <div class="row">
         <div class="col-md-10 offset-md-1 mt-5">
@@ -113,11 +116,6 @@
             </table>
         </div>
     </div>
-
-
-
-
-
 
     {% if request.user.is_superuser %}
     <div class="row mt-5">
