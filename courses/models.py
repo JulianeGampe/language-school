@@ -2,6 +2,15 @@ from django.db import models
 
 
 STATUS = ((1, "Bookable"), (0, "Booking closed"))
+WEEKDAY = (
+    (1, "Monday"),
+    (2, "Tuesday"),
+    (3, "Wednesday"),
+    (4, "Thursday"),
+    (5, "Friday"),
+    (6, "Saturday"),
+    (7, "Sunday")
+)
 
 
 class Level(models.Model):
@@ -30,7 +39,7 @@ class Course(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     startdate = models.DateField()
-    weekday = models.CharField(max_length=254)
+    weekday = models.IntegerField(choices=WEEKDAY, default=1)
     starttime = models.TimeField()
     duration = models.CharField(max_length=254)
     status = models.IntegerField(choices=STATUS, default=1)

@@ -71,7 +71,21 @@
                         </td>
                         <td>
                             {{ course.startdate }}<br>
-                            {{ course.weekday }}<br>
+                            {% if course.weekday == 1 %}
+                            Monday<br>
+                            {% elif course.weekday == 2 %}
+                            Tuesday<br>
+                            {% elif course.weekday == 3 %}
+                            Wednesday<br>
+                            {% elif course.weekday == 4 %}
+                            Thursday<br>
+                            {% elif course.weekday == 5 %}
+                            Friday<br>
+                            {% elif course.weekday == 6 %}
+                            Saturday<br>
+                            {% elif course.weekday == 7 %}
+                            Sunday<br>
+                            {% endif %}
                             {{ course.starttime }}<br>
                             {{ course.duration }}
                         </td>

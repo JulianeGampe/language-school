@@ -40,7 +40,21 @@
                         <td>{{ item.course.format }}</td>
                         <td>{{ item.course.startdate }}</td>
                         <td>
-                            {{ item.course.weekday }}<br>
+                            {% if item.course.weekday == 1 %}
+                            Monday<br>
+                            {% elif item.course.weekday == 2 %}
+                            Tuesday<br>
+                            {% elif item.course.weekday == 3 %}
+                            Wednesday<br>
+                            {% elif item.course.weekday == 4 %}
+                            Thursday<br>
+                            {% elif item.course.weekday == 5 %}
+                            Friday<br>
+                            {% elif item.course.weekday == 6 %}
+                            Saturday<br>
+                            {% elif item.course.weekday == 7 %}
+                            Sunday<br>
+                            {% endif %}
                             {{ item.course.starttime }}
                         </td>
                         <td><a href="{% url 'orderhistory' order.ordernumber %}">{{ order.ordernumber|truncatechars:6 }}</a></td>
