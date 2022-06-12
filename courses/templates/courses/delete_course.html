@@ -28,8 +28,8 @@
         <div class="col-md-8 offset-md-1">
             <form action="{% url 'deletecourse' course.id %}" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
-                <button class="btn btn-black" type="submit">Delete permanently</button>
-                <a href="{% url 'allcourses' %}" class="btn btn-black">Cancel</a>
+                <button class="btn" type="submit">Delete permanently</button>
+                <a href="{% url 'allcourses' %}" class="btn">Cancel</a>
             </form>
         </div>
     </div>

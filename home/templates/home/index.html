@@ -32,7 +32,7 @@
             <form action="{% url 'home' %}" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ newsletterform|crispy }}
-                <button class="btn btn-black" type="submit">Subscribe</button>
+                <button class="btn" type="submit">Subscribe</button>
             </form>
         </div>
         <div class="col-md-4">

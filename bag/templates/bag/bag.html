@@ -14,7 +14,7 @@
             <p>Your selected courses:</p> 
         </div>
         <div class="col-md-2">
-            <a href="{% url 'checkout' %}" class="btn btn-black">Secure Checkout {{ total }} Euro</a>
+            <a href="{% url 'checkout' %}" class="btn">Secure Checkout {{ total }} Euro</a>
         </div>
     </div>
     {% for item in bagitems %}
@@ -27,7 +27,7 @@
                     <p class="card-text">{{ item.course.price }} Euro</p>
                     <form action="{% url 'removebag' item.course_id %}" method="post">
                         {% csrf_token %}
-                        <button class="btn btn-signup btn-md" type="submit">Remove from bag</button>
+                        <button class="btn" type="submit">Remove from bag</button>
                     </form>
                 </div>
             </div>

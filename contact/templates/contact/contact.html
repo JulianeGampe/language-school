@@ -44,7 +44,7 @@
             <form action="{% url 'contact' %}" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form|crispy }}
-                <button class="btn btn-black" type="submit">Submit Form</button>
+                <button class="btn mt-1" type="submit">Submit Form</button>
             </form>
         </div>
     </div>
