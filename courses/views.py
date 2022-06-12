@@ -36,7 +36,7 @@ def allcourses(request):
 
             queries = Q(
                 level__name__icontains=query
-            ) | Q(format__name__icontains=query) | Q(weekday__icontains=query)
+            ) | Q(format__name__icontains=query) | Q(name__icontains=query)
             courses = courses.filter(queries)
             coursecount = courses.filter(status=1).count()
             coursecountclosed = courses.filter(status=0).count()
