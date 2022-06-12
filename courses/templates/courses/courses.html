@@ -56,8 +56,9 @@
                     <th>Course Name</th>
                     <th>Level + Format</th>
                     <th>Time</th>
-                    <th>Places left</th>
-                    <th>Price</th>
+                    <th class="d-none d-sm-table-cell">Places left</th>
+                    <th class="d-none d-sm-table-cell">Price</th>
+                    <th class="d-table-cell d-sm-none">Price + Places left</th>
                 </thead>
                 <tbody>
                 {% for course in courses %}
@@ -89,8 +90,9 @@
                             {{ course.starttime }}<br>
                             {{ course.duration }}
                         </td>
-                        <td>{{ course.limit }}</td>
-                        <td>{{ course.price }} Euro</td>
+                        <td class="d-none d-sm-table-cell">{{ course.limit }}</td>
+                        <td class="d-none d-sm-table-cell">{{ course.price }} Euro</td>
+                        <td class="d-table-cell d-sm-none">{{ course.price }} Euro<br>{{ course.limit }} Place(s)</td>
                     </tr>
                 {% endif %}
                 {% endfor %}
@@ -117,8 +119,9 @@
                     <th>Course Name</th>
                     <th>Level + Format</th>
                     <th>Time</th>
-                    <th>Places left</th>
-                    <th>Price</th>
+                    <th class="d-none d-sm-table-cell">Places left</th>
+                    <th class="d-none d-sm-table-cell">Price</th>
+                    <th class="d-table-cell d-sm-none">Price + Places left</th>
                 </thead>
                 <tbody>
                 {% for course in courses %}
@@ -132,12 +135,27 @@
                         </td>
                         <td>
                             {{ course.startdate }}<br>
-                            {{ course.weekday }}<br> 
+                            {% if course.weekday == 1 %}
+                            Monday<br>
+                            {% elif course.weekday == 2 %}
+                            Tuesday<br>
+                            {% elif course.weekday == 3 %}
+                            Wednesday<br>
+                            {% elif course.weekday == 4 %}
+                            Thursday<br>
+                            {% elif course.weekday == 5 %}
+                            Friday<br>
+                            {% elif course.weekday == 6 %}
+                            Saturday<br>
+                            {% elif course.weekday == 7 %}
+                            Sunday<br>
+                            {% endif %}
                             {{ course.starttime }}<br> 
                             {{ course.duration }}
                         </td>
-                        <td>{{ course.limit }}</td>
-                        <td>{{ course.price }} Euro</td>
+                        <td class="d-none d-sm-table-cell">{{ course.limit }}</td>
+                        <td class="d-none d-sm-table-cell">{{ course.price }} Euro</td>
+                        <td class="d-table-cell d-sm-none">{{ course.price }} Euro<br>{{ course.limit }} Place(s)</td>
                     </tr>
                 {% endif %}
                 {% endfor %}
