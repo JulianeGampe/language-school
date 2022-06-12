@@ -3,3 +3,11 @@ body {
     padding-top: 70px;
     padding-bottom: 70px;
 }
+
+#homepageimage {
+    width: 100%;
+}
+
+#navbarimage {
+    width: 50px;
+}
