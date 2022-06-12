@@ -20,10 +20,19 @@
             <h2>My booked courses</h2>
             <table class="table">
                 <thead>
-                    <th>Level</th>
-                    <th>Format</th>
-                    <th>Startdate</th>
-                    <th>
+                    <th class="d-none d-sm-table-cell">Level</th>
+                    <th class="d-none d-sm-table-cell">Format</th>
+                    <th class="d-table-cell d-sm-none">
+                        Level<br>
+                        Format
+                    </th>
+                    <th class="d-none d-sm-table-cell">Startdate</th>
+                    <th class="d-none d-sm-table-cell">
+                        Weekday<br>
+                        Starttime
+                    </th>
+                    <th class="d-table-cell d-sm-none">
+                        Startdate<br>
                         Weekday<br>
                         Starttime
                     </th>
@@ -33,13 +42,37 @@
                     {% for order in orders %}
                     {% for item in order.lineitems.all %}
                     <tr>
-                        <td>
+                        <td class="d-none d-sm-table-cell">
                             {{ item.course.level.name }}<br>
                             Pt.{{ item.course.level.part }}
                         </td>
-                        <td>{{ item.course.format }}</td>
-                        <td>{{ item.course.startdate }}</td>
-                        <td>
+                        <td class="d-none d-sm-table-cell">{{ item.course.format }}</td>
+                        <td class="d-table-cell d-sm-none">
+                            {{ item.course.level.name }}<br>
+                            Pt.{{ item.course.level.part }}<br>
+                            {{ item.course.format }}
+                        </td>
+                        <td class="d-none d-sm-table-cell">{{ item.course.startdate }}</td>
+                        <td class="d-none d-sm-table-cell">
+                            {% if item.course.weekday == 1 %}
+                            Monday<br>
+                            {% elif item.course.weekday == 2 %}
+                            Tuesday<br>
+                            {% elif item.course.weekday == 3 %}
+                            Wednesday<br>
+                            {% elif item.course.weekday == 4 %}
+                            Thursday<br>
+                            {% elif item.course.weekday == 5 %}
+                            Friday<br>
+                            {% elif item.course.weekday == 6 %}
+                            Saturday<br>
+                            {% elif item.course.weekday == 7 %}
+                            Sunday<br>
+                            {% endif %}
+                            {{ item.course.starttime }}
+                        </td>
+                        <td class="d-table-cell d-sm-none">
+                            {{ item.course.startdate }}<br>
                             {% if item.course.weekday == 1 %}
                             Monday<br>
                             {% elif item.course.weekday == 2 %}
