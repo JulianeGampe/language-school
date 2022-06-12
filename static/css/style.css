@@ -1,9 +1,27 @@
 body {
-    background-color: #c8cfd3;
+    background-color: #E4EAF2;
     padding-top: 70px;
     padding-bottom: 70px;
 }
 
+/* color styling */
+nav,
+footer {
+    background-color: #B8C6D9;
+    color: #000;
+}
+
+.btn {
+    background-color: #262626;
+    color: #FFF;
+}
+
+.btn:hover {
+    background-color: #8C0303;
+    color: #FFF;
+}
+
+/* image styling */
 #homepageimage {
     width: 100%;
 }
