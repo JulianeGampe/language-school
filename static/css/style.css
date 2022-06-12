@@ -21,6 +21,11 @@ footer {
     color: #FFF;
 }
 
+/* color for footer disclaimer and checkout page disclaimer */
+.darkred {
+    color: #8C0303;
+}
+
 /* image styling */
 #homepageimage {
     width: 100%;
