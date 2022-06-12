@@ -53,8 +53,9 @@
         <div class="col-md-10 offset-md-1 mt-5">
             <table class="table">
                 <thead>
-                    <th>Course Name</th>
-                    <th>Level + Format</th>
+                    <th class="d-none d-sm-table-cell">Course Name</th>
+                    <th class="d-none d-sm-table-cell">Level + Format</th>
+                    <th class="d-table-cell d-sm-none">Name + Level + Format</th>
                     <th>Time</th>
                     <th class="d-none d-sm-table-cell">Places left</th>
                     <th class="d-none d-sm-table-cell">Price</th>
@@ -64,8 +65,13 @@
                 {% for course in courses %}
                 {% if course.status == 1 %}
                     <tr>
-                        <td><a href="{% url 'coursedetail' course.id %}">{{ course.name }}</a></td>
-                        <td>
+                        <td class="d-none d-sm-table-cell"><a href="{% url 'coursedetail' course.id %}">{{ course.name }}</a></td>
+                        <td class="d-none d-sm-table-cell">
+                            {{ course.level.name }}<br>
+                            Part {{ course.level.part}}<br>
+                            {{ course.format }}
+                        </td>
+                        <td class="d-table-cell d-sm-none"><a href="{% url 'coursedetail' course.id %}">{{ course.name }}</a><br>
                             {{ course.level.name }}<br>
                             Part {{ course.level.part}}<br>
                             {{ course.format }}
@@ -116,8 +122,9 @@
         <div class="col-md-10 offset-md-1 mt-5">
             <table class="table">
                 <thead>
-                    <th>Course Name</th>
-                    <th>Level + Format</th>
+                    <th class="d-none d-sm-table-cell">Course Name</th>
+                    <th class="d-none d-sm-table-cell">Level + Format</th>
+                    <th class="d-table-cell d-sm-none">Name + Level + Format</th>
                     <th>Time</th>
                     <th class="d-none d-sm-table-cell">Places left</th>
                     <th class="d-none d-sm-table-cell">Price</th>
@@ -127,10 +134,15 @@
                 {% for course in courses %}
                 {% if course.status == 0 %}
                     <tr>
-                        <td><a href="{% url 'coursedetail' course.id %}">{{ course.name }}</a></td>
-                        <td>
-                            {{ course.level.name }}<br> 
-                            Part {{ course.level.part}}<br> 
+                        <td class="d-none d-sm-table-cell"><a href="{% url 'coursedetail' course.id %}">{{ course.name }}</a></td>
+                        <td class="d-none d-sm-table-cell">
+                            {{ course.level.name }}<br>
+                            Part {{ course.level.part}}<br>
+                            {{ course.format }}
+                        </td>
+                        <td class="d-table-cell d-sm-none"><a href="{% url 'coursedetail' course.id %}">{{ course.name }}</a><br>
+                            {{ course.level.name }}<br>
+                            Part {{ course.level.part}}<br>
                             {{ course.format }}
                         </td>
                         <td>
