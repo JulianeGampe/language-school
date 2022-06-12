@@ -1,6 +1,6 @@
 Hello {{ form.name.value }}!
 
-Thank you for filling in the form on our website.
+Thank you for filling in the contact form on our website.
 
 You have sent us the following message:
 
