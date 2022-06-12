@@ -15,6 +15,8 @@ def allcourses(request):
     sort = None
     direction = None
     query = None
+    coursecount = Course.objects.filter(status=1).count()
+    coursecountclosed = Course.objects.filter(status=0).count()
 
     if request.GET:
         if 'sort' in request.GET:
@@ -36,6 +38,8 @@ def allcourses(request):
                 level__name__icontains=query
             ) | Q(format__name__icontains=query) | Q(weekday__icontains=query)
             courses = courses.filter(queries)
+            coursecount = courses.filter(status=1).count()
+            coursecountclosed = courses.filter(status=0).count()
 
     current_sorting = f'{sort}_{direction}'
 
@@ -43,7 +47,9 @@ def allcourses(request):
     context = {
         'courses': courses,
         'current_sorting': current_sorting,
-        'search_term': query
+        'search_term': query,
+        'coursecount': coursecount,
+        'coursecountclosed': coursecountclosed
     }
     return render(request, template, context)
 
