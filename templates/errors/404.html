@@ -2,8 +2,14 @@
 {% load static %}
 
 {% block content %}
-    <h2>404 ERROR</h2>
-    <p>Page not found</p>
-    <p>Back to home page</p>
-    <a href="{% url 'home' %}" class="btn btn-black">Home</a>
+<div class="container mb-5">
+    <div class="row mt-5">
+        <div class="col-md-8 offset-md-1">
+            <h2>404 ERROR</h2>
+            <p>Page not found</p>
+            <p>Back to home page</p>
+            <a href="{% url 'home' %}" class="btn">Home</a>
+        </div>
+    </div>
+</div>
 {% endblock %}
