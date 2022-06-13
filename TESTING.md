@@ -320,9 +320,12 @@ The website functionality with all user stories has been tested manually while l
 
 The following bugs were tracked and fixed using the GitHub Issues tracker with the label of "bug".
 
-[GitHub Issues Tracker Closed Issues](https://github.com/JulianeGampe/.....closed bugs)
+[GitHub Issues Tracker Closed Issues](https://github.com/JulianeGampe/language-school/issues?q=is%3Aissue+is%3Aclosed)
 
-- **Bug Name** - [#1](https://github.com/JulianeGampe/....)
+- **Calculating shopping bag total not working** - [#1](https://github.com/JulianeGampe/language-school/issues/28)
+- **NoReverseMatch at /courses/edit/10** - [#2](https://github.com/JulianeGampe/language-school/issues/29)
+- **Navbar Dropdown not opening** - [#3](https://github.com/JulianeGampe/language-school/issues/30)
+- **Allauth templates cannot be changed** - [#4](https://github.com/JulianeGampe/language-school/issues/32)
 
 ### Remaining Bugs
 
