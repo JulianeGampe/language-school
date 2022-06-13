@@ -4,11 +4,128 @@
 
 ### Testing User Stories
 
-The website functionality with all user stories has been tested manually while logged in as testusers, site owner/admin and while not logged in. Additional tests from the user perspective have been made by a friend who created a user account for themselves. 
+The website functionality with all user stories has been tested manually while logged in as testusers or admin and while not logged in. 
 
-1. As a user I .....
-    ![Instructions](documentation/screenshots/homepage.png)
+#### Student
+##### Viewing and Navigation
+1.	As a student I can see the home page so that I get an overview of what I can learn.
+    ![Homepage Part 1](documentation/screenshots/homepageone.png)
+    ![Homepage Part 2](documentation/screenshots/homepagetwo.png)
+2.	As a student I can see and browse all available courses so that I can make a choice on which one to book.
+    ![Courses](documentation/screenshots/courses.png)
+3.	As a student I can see the details of an individual course so that I can see all necessary information including a course description.
+    ![Coursedetail Student](documentation/screenshots/coursedetailstudent.png)
+4.	As a student I can see general information about the offered courses and language levels so that I can decide better which course is the right one for me.
+    ![Course Information](documentation/screenshots/courseinformation.png)
+5.	As a student I can see information about the teachers so that I can reassure myself about the quality of the offered classes.
+    ![Teachers](documentation/screenshots/teachers.png)
+6.	As a student I can see contact details of the language school so that I can get in touch in case I have additional questions.
+    ![Contact](documentation/screenshots/contact.png)
+    - A contact form can be filled in. Valid information has to be provided before sending.
+        ![Contact Form Test](documentation/screenshots/contactformtest.png)
+7.	As a student I can see a link to the schools Facebook page so that I can connect with them via social media.
+    ![Footer](documentation/screenshots/footer.png)
+8.	As a student I can sign up for the schools newsletter so that I can receive newsletters with up-to-date information.
+    ![Homepage Part 2](documentation/screenshots/homepagetwo.png)
 
+
+##### User account
+9.	As a student I can register for an account so that I am able to view my profile.
+    ![Sign Up](documentation/screenshots/signup.png)
+    - The signup was tested with testaccounts.
+    - It is not possible to sign up with missing or incorrect fields.
+        ![Sign Up Test](documentation/screenshots/signuptest.png)
+    - After signing up an email is sent to verify the email address.
+        ![Sign Up Email](documentation/screenshots/signupemail.png)
+        ![Sign Up Email Confirmation](documentation/screenshots/signupemailconfirm.png)
+    - After signup it is possible to login and access the My Profile Page
+        ![Sign Up Profile](documentation/screenshots/signupmyprofile.png)
+10.	As a student I will receive a confirmation email after registering so that I know that my account registration was successful. 
+    ![Sign Up Email Sent](documentation/screenshots/signupemailsent.png)
+11.	As a student I can login and logout of my account so that I can access my personal information.
+    ![Sign In](documentation/screenshots/signin.png)
+    ![Sign Out](documentation/screenshots/signout.png)
+    - All necessary fields have to be filled correctly to sign in.
+        ![Sign In Test](documentation/screenshots/signintest.png)
+12.	As a student I have a personalized user profile so that I can view the courses that I have booked.
+    ![Sign In Test](documentation/screenshots/profile.png)
+13.	As a student I can recover my account password so that I can access my account in case I forgot my password.
+    - A Forgot Password Link is available on the login page.
+        ![Sign In](documentation/screenshots/signin.png)
+    - When clicked, an email can be sent with recovery information.
+        ![Password Reset](documentation/screenshots/passwordreset.png)
+
+##### Sorting and Searching
+14.	As a student I can sort the list of all available courses by level so that I can see courses matching my current language level.
+    - A drop down menu to sort the courses is available
+        ![Sorting](documentation/screenshots/sortingandsearching.png)
+    - Courses can be sorted by level
+        ![Level](documentation/screenshots/sortlevel.png)
+15.	As a student I can sort the list of all available courses by course format so that I can quickly choose courses from my preferred course format.
+    - A drop down menu to sort the courses is available
+        ![Sorting](documentation/screenshots/sortingandsearching.png)
+    - Courses can be sorted by level
+        ![Format](documentation/screenshots/sortformat.png)
+16.	As a student I can sort the list of all available courses by the start date of the course so that I can choose a course that starts on a suitable date.
+    - A drop down menu to sort the courses is available
+        ![Sorting](documentation/screenshots/sortingandsearching.png)
+    - Courses can be sorted by date
+        ![Date](documentation/screenshots/sortstartdate.png)
+17.	As a student I can sort the list of all available courses by the weekday on which the course will take place so that I can find a course that fits my schedule.
+    - A drop down menu to sort the courses is available
+        ![Sorting](documentation/screenshots/sortingandsearching.png)
+    - Courses can be sorted by weekday
+        ![Weekday](documentation/screenshots/sortweekday.png)
+18.	As a student I can search for a course by level or course format to find a specific course that I want to book.
+    - A search bar to search for courses is available
+        ![Sorting](documentation/screenshots/sortingandsearching.png)
+    - Searching for level is possible
+        ![Search Level](documentation/screenshots/searchlevel.png)
+    - Searching for format is possible
+        ![Search Level](documentation/screenshots/searchformat.png)
+19.	As a student I can easily see what I have searched for so that I can quickly decide if my desired course is available.
+    - The number of search results is displayed together with the search term below the search bar
+        ![Search Level](documentation/screenshots/searchformat.png)
+
+
+##### Purchase and Checkout
+20.	As a student I can see the course(s) that I have in my shopping bag so that I can see which course(s) I am about to purchase.
+    ![Shopping Bag](documentation/screenshots/shoppingbag.png)
+21.	As a student I can remove a chosen course from my shopping bag so that I can make changes to my purchase before I checkout.
+    - A Remove button is available next to the bag item and it removes the course from the bag when clicked
+        ![Remove Course](documentation/screenshots/removecourse.png)
+22.	As a student I can easily enter my payment information so that I can check out quickly. 
+    ![Checkout](documentation/screenshots/checkouttwo.png)
+    - Correct information has to be entered.
+        ![Checkout Test](documentation/screenshots/checkouttest.png)
+23.	As a student I can view an order confirmation after checkout so that I can verify I have booked the correct course(s).
+    ![Checkout Confirmation](documentation/screenshots/checkoutconfirmation.png)
+24.	As a student I will receive an email confirmation after purchase so that I can keep the confirmation of my course(s) for my records.
+    ![Checkout Confirmation Email](documentation/screenshots/checkoutconfirmationemail.png)
+
+
+#### Admin
+25.	As an admin I can add new courses to the website so that I can immediately offer new courses once they are organized with the teachers.
+    ![Add Course](documentation/screenshots/addcourse.png)
+    - Valid information has to be provided
+        ![Add Course Test](documentation/screenshots/addcoursetest.png)
+26.	As an admin I can edit/update a course so that I can change the status or correct any mistakes.
+    - When logged in as admin, the edit button is visible on the coursedetail page
+        ![Course Detail Admin](documentation/screenshots/coursedetailadmin.png)
+    - The course can then be updated
+        ![Edit Course](documentation/screenshots/editcourse.png)
+    - Valid information has to be provided
+        ![Edit Course Test](documentation/screenshots/editcoursetest.png)
+27.	As an admin I can delete a course so that I can remove a course I have accidentally created.
+    - When logged in as admin, the delete button is visible on the coursedetail page
+        ![Course Detail Admin](documentation/screenshots/coursedetailadmin.png)
+    - When clicking on it a confirmation page will be shown before final deletion
+        ![Delete Course](documentation/screenshots/deletecourse.png)
+
+#### Student + Admin
+28. As a student/admin I can see messages on the screen so that I know the result of my input.
+    ![Message Example One](documentation/screenshots/messageone.png)
+    ![Message Example Two](documentation/screenshots/messagetwo.png)
 
 ### Javascript
 - JavaScript
