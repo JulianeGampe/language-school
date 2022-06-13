@@ -97,6 +97,7 @@ Wireframes created with Balsamiq were used to plan the layout of the website.
 A flowchart createt with Power Point was used to plan the models for the website.
 
 ![Flowchart](documentation/wireframes/modelflowchart.png)
+![Flowchart Two](documentation/wireframes/modelflowcharttwo.png)
 
 ## Features 
 
