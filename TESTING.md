@@ -218,6 +218,10 @@ The website functionality with all user stories has been tested manually while l
  
       - bag app
 
+        contexts.py
+
+        ![contexts.py](documentation/testing/pep8/bag/pep8bagcontexts.png)
+
         urls.py
         
         ![urls.py](documentation/testing/pep8/bag/pep8bagurls.png)
