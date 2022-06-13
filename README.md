@@ -52,9 +52,20 @@ For the admin there is also the possibility to add new courses directly from the
 28. As a student/admin I can see messages on the screen so that I know the result of my input.
 
 ## UX
-### Colour Scheme
+### Color Scheme
 
+As a first step the color extractor from [Adobe Color](https://color.adobe.com/create/image) has been used to extract colors from the home page image and the image in the navbar brand.
 
+![Color Tool Home Page](documentation/screenshots/extractcolor.png)
+![Color Tool Navbar](documentation/screenshots/extractcolortwo.png)
+
+The light blue color #E4EAF2 from the homepage image has been used as the background color on all pages. The darker blue color #B8C6D9 from the homepage image has been used as the background color for the navbar and footer.
+
+The almost black color #262626 from the navbar image has been used as a background color for the buttons on the website. The dark red color #8C0303 has been used as the font color for the disclaimer in the footer and on the checkout page as well as for the warning on the delete course page.
+
+Black #000 was used as font color throughout the page as it contrasts well with the chosen background colors. White #FFF was used as the background color for the buttons as this contrasts well with the chosen button colors.
+
+The contrasts of all colors have been checked in a contrast checker. The contrast testing can be found in  the [TESTING.md](TESTING.md) file. 
 
 ### Typography 
 
