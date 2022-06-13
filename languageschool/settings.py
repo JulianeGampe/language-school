@@ -31,8 +31,6 @@ DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['languageschoolproject.herokuapp.com', 'localhost']
 
-X_FRAME_OPTIONS = 'ALLOW FROM http://ami.responsivedesign.is'
-
 # Application definition
 
 INSTALLED_APPS = [
