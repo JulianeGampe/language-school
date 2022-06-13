@@ -190,8 +190,22 @@ The website functionality with all user stories has been tested manually while l
 ## Color Testing
 
 - All colors have been tested with a contrast checker. 
-  - Contrast test # against #. (main background color against font color)
-  ![Adobe Color Test Light Blue](documentation/screenshots/contrastcheck.png)
+  - Contrast test #E4EAF2 against #000. (main background color against font color)
+  ![Adobe Color Test #E4EAF2 against #000](documentation/screenshots/contrastcheckE4EAF2.png)
+  - Contrast test #B8C6D9 against #000. (navbar and footer background color against font color)
+  ![Adobe Color Test #B8C6D9 against #000](documentation/screenshots/contrastcheckB8C6D9.png)
+  - Contrast test #262626 against #FFF. (background color for the buttons against font color of the buttons)
+  ![Adobe Color Test #262626 against #FFF](documentation/screenshots/contrastcheck262626.png)
+  - Contrast test #8C0303 against #FFF. (background color for the hovered buttons against font color of the hovered buttons)
+  ![Adobe Color Test #8C0303 against #FFF](documentation/screenshots/contrastcheck8C0303.png)
+  - Contrast test #8C0303 against #B8C6D9. (font color of the disclaimer in the footer against footer background color)
+  ![Adobe Color Test #8C0303 against #B8C6D9](documentation/screenshots/contrastcheck8C0303againstB8C6D9.png)
+  - Contrast test #8C0303 against #E4EAF2. (font color of the warnings/disclaimer against the light blue background color)
+  ![Adobe Color Test #8C0303 against #E4EAF2](documentation/screenshots/contrastcheck8C0303againstE4EAF2.png)
+  - Contrast test #262626 against #B8C6D9. (font color of the navbar links against the navbar background color)
+  ![Adobe Color Test #262626 against #B8C6D9](documentation/screenshots/contrastcheck262626againstB8C6D9.png)
+  - Contrast test #262626 against #E4EAF2. (font color of the website links against the light blue background color)
+  ![Adobe Color Test #262626 against #E4EAF2](documentation/screenshots/contrastcheck262626againstE4EAF2.png)
 
 ## Validator Testing 
 
