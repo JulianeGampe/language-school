@@ -306,13 +306,9 @@ The website functionality with all user stories has been tested manually while l
     </details>
 
 - CSS
-  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/......)
+  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Flanguageschoolproject.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
       ![CSS validation](documentation/testing/css/cssvalidation.png)
-
-- JavaScript
-  - No errors were found when passing through [JSHint](https://jshint.com/)
-  ![Timeout](documentation/testing/js/jstimeoutfunction.png)
 
 - Accessibility
   - The page passes the accessibility test using lighthouse in devtools
