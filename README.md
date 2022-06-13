@@ -1,6 +1,8 @@
-# Online Language School
+# Learn German Online
 
-Description
+Learn German Online is the website of a fictitious online language school. It offers online language classes for German as a foreign language and is targeted towards users who want to learn German in online classes. The students can create an account and purchase courses for different language levels and different formats (i.e. Standard, Business). The purchased courses will be saved and visible in their online profile. There are some information pages as well, on which the students can read more about the course structure and the teachers and where they can fill in a contact form if they have additional questions.
+
+For the admin there is also the possibility to add new courses directly from the frontend. This page, along with the possibility to edit or delete existing courses, becomes accessible after login with admin credentials.
 
 ![Responsive Mockup](documentation/screenshots/amiresponsive.png)
 
