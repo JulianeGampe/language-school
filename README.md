@@ -475,6 +475,7 @@ You must set the keys for your environment variables in env.py:
 ### Content
 
 - The Code Institute Walkthrough Project [Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1) and its respective code have been used as a major guidance throughout the project. The following larger parts have been taken explicitly from this project:
+    - bag: contexts.py
     - checkout: models, admin.py, signals.py, apps.py, forms.py, css, stripe_elements.js, in views.py the code to sent confirmation emails (taken from webhook_handler.py of the Boutique Ado Walkthrough)
     - profiles: models (UserProfile Model + @receiver - create or update user profile)
     - contact: in views.py the code to sent confirmation emails (taken from webhook_handler.py of the Boutique Ado Walkthrough)
