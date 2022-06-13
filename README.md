@@ -318,31 +318,32 @@ A flowchart created with Power Point was used to plan the models for the website
     - framework has been used to build the project and the apps.
 - [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) 
     - is used to create the forms in the application.
-- [TinyMCE](https://www.tiny.cloud/) 
-    - is used as the text editor.
 - [Gitpod](https://www.gitpod.io/) 
     - was used for the development of the website.
 - [Github](https://github.com/) 
     - was used to store the code online.
 - Git 
     - was used for version control.
-- [The GitHub Projects Board](https://github.com/JulianeGampe/travel-blog/projects/1) 
+- [The GitHub Projects Board](https://github.com/JulianeGampe/language-school/projects/1) 
     - was used to keep track of tasks that are still to do or in progress or see tasks that are already done.
-- [The GitHub Issues tracker](https://github.com/JulianeGampe/travel-blog/issues) 
+- [The GitHub Issues tracker](https://github.com/JulianeGampe/language-school/issues) 
     - was used to keep track of bugs and add solutions.
 - [Balsamiq](https://balsamiq.com/wireframes/) 
     - was used to create the wireframes.
+- [Microsoft Powerpoint](https://www.microsoft.com/en-ie/microsoft-365/powerpoint)
+    - was used to create the Model flowcharts.
 - [Font Awesome](https://fontawesome.com/) 
     - was used for the icons.
 - [Cloudinary](https://cloudinary.com/) 
-    - is used to store and upload the images.
+    - is used to store static files.
 - [Heroku](https://www.heroku.com/home) 
     - is used to deploy the application
 - [Google Fonts](https://fonts.google.com/)
     - was used for the website font
 - [Adobe Color](https://color.adobe.com/create/image)
-    - was used for extracting the colors from the homepage image and for color testing.
-
+    - was used for extracting the colors from the images and for color testing.
+- [Stripe](https://stripe.com/)
+    - was used for the payments infrastructure.
 
 ## Testing
 
