@@ -264,43 +264,107 @@ The website functionality with all user stories has been tested manually while l
     <details>
     <summary>Click to expand to view the HTML testing</summary>
 
-      - Home
+    - Bag
 
-        [home W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Ftravelblogproject.herokuapp.com%2F)
+        [bag W3C validator]()
 
-        ![homepage](documentation/testing/html/home/htmlhome.png)
-        
+        ![bag](documentation/testing/html/bag/htmlbag.png)
 
-      - Contact
+    - Checkout
 
-        [contact W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Ftravelblogproject.herokuapp.com%2Fcontact%2F)
+        [checkout W3C validator]()
+
+        ![checkout](documentation/testing/html/checkout/htmlcheckout.png)
+
+        [checkout success W3C validator]()
+
+        ![checkout success](documentation/testing/html/checkout/htmlcheckoutsuccess.png)
+
+    - Contact
+
+        [contact W3C validator]()
 
         ![contact](documentation/testing/html/contact/htmlcontact.png)
-      
 
+    - Courseinfo
 
+        [courseinfo W3C validator]()
 
-      - Account
+        ![courseinfo](documentation/testing/html/courseinfo/htmlcourseinfo.png)
+
+    - Courses
+
+        [add course W3C validator]()
+
+        ![add course](documentation/testing/html/courses/htmladdcourse.png)
+
+        [course detail W3C validator]()
+
+        ![course detail](documentation/testing/html/courses/htmlcoursedetail.png)
+
+        [courses W3C validator]()
+
+        ![courses course](documentation/testing/html/courses/htmlcourses.png)
+
+        [delete course W3C validator]()
+
+        ![delete course](documentation/testing/html/courses/htmldeletecourse.png)
+
+        [edit course W3C validator]()
+
+        ![edit course](documentation/testing/html/courses/htmleditcourse.png)
+    
+    - Home
+
+        [home W3C validator]()
+
+        ![homepage](documentation/testing/html/home/htmlhome.png)
+
+    - Profiles
+
+        [profiles W3C validator]()
+
+        ![profile](documentation/testing/html/profiles/htmlprofile.png)
+
+    - Teachers
+
+        [teachers W3C validator]()
+
+        ![teachers](documentation/testing/html/teachers/htmlteachers.png)
+
+    - Account
 
         login.html
 
-        [login W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Ftravelblogproject.herokuapp.com%2Faccounts%2Flogin%2F)
+        [login W3C validator]()
 
         ![login](documentation/testing/html/account/htmllogin.png)
 
 
         signup.html
 
-        [signup W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Ftravelblogproject.herokuapp.com%2Faccounts%2Fsignup%2F)
+        [signup W3C validator]()
 
         ![signup](documentation/testing/html/account/htmlsignup.png)
 
 
         logout.html
 
-        [logout W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Ftravelblogproject.herokuapp.com%2Faccounts%2Flogout%2F)  
+        [logout W3C validator]()  
 
         ![logout](documentation/testing/html/account/htmllogout.png)
+
+    - Errors
+
+        [404 W3C validator]()
+
+        ![404](documentation/testing/html/errors/html404.png)
+
+        [500 W3C validator]()
+
+        ![500](documentation/testing/html/errors/html404.png)
+
+
 
 
     </details>
