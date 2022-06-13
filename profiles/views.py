@@ -33,6 +33,9 @@ def profile(request):
 
 @login_required
 def orderhistory(request, ordernumber):
+    """
+    Display order history confirmation
+    """
     order = get_object_or_404(Order, ordernumber=ordernumber)
 
     messages.info(

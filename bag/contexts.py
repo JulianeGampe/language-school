@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404
 from courses.models import Course
 
 
+# Get the items in the shopping bag
 def bagcontents(request):
     bagitems = []
     total = 0

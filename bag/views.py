@@ -31,6 +31,9 @@ def addbag(request, course_id):
 
 @login_required
 def removebag(request, course_id):
+    """
+    Remove course from the shopping bag
+    """
     course = get_object_or_404(Course, pk=course_id)
     bag = request.session.get('bag', {})
     request.session['bag'] = bag
