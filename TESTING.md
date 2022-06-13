@@ -161,7 +161,7 @@ The website functionality with all user stories has been tested manually while l
 
 - The project is responsive and functions on all standard screen sizes using the devtools device toolbar.
 
-- The navigation, home page, ..... and the footer are readable and easy to understand.
+- The navigation, home page, our courses, course information, our teachers, contact, profile, shopping bag, checkout, checkout success, add/edit/delete course and the footer are readable and easy to understand.
 
   -  Google Chrome Desktop
 
