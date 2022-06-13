@@ -380,11 +380,18 @@ The website functionality with all user stories has been tested manually while l
 
     - Bag
 
+        Propper authentication needed to access this page
+
         [bag W3C validator]()
 
         ![bag](documentation/testing/html/bag/htmlbag.png)
 
     - Checkout
+
+        Propper authentication needed to access these pages
+
+        - checkout.html
+        - checkoutsuccess.html
 
         [checkout W3C validator]()
 
@@ -396,29 +403,39 @@ The website functionality with all user stories has been tested manually while l
 
     - Contact
 
-        [contact W3C validator]()
+        [contact W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Flanguageschoolproject.herokuapp.com%2Fcontact%2F)
 
         ![contact](documentation/testing/html/contact/htmlcontact.png)
 
     - Courseinfo
 
-        [courseinfo W3C validator]()
+        [courseinfo W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Flanguageschoolproject.herokuapp.com%2Fcourseinfo%2F)
 
         ![courseinfo](documentation/testing/html/courseinfo/htmlcourseinfo.png)
 
     - Courses
 
-        [add course W3C validator]()
 
-        ![add course](documentation/testing/html/courses/htmladdcourse.png)
 
-        [course detail W3C validator]()
+        [course detail W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Flanguageschoolproject.herokuapp.com%2Fcourses%2F29%2F)
 
         ![course detail](documentation/testing/html/courses/htmlcoursedetail.png)
 
         [courses W3C validator]()
 
         ![courses course](documentation/testing/html/courses/htmlcourses.png)
+
+        
+
+        Propper authentication needed to access these pages:
+
+        - add_course.html
+        - delete_course.html
+        - edit_course.html
+
+        [add course W3C validator]()
+
+        ![add course](documentation/testing/html/courses/htmladdcourse.png)
 
         [delete course W3C validator]()
 
@@ -430,11 +447,15 @@ The website functionality with all user stories has been tested manually while l
     
     - Home
 
-        [home W3C validator]()
+        [home W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Flanguageschoolproject.herokuapp.com%2F)
 
         ![homepage](documentation/testing/html/home/htmlhome.png)
 
     - Profiles
+
+        Propper authentication needed to access this page
+
+        - profile.html
 
         [profiles W3C validator]()
 
@@ -442,7 +463,7 @@ The website functionality with all user stories has been tested manually while l
 
     - Teachers
 
-        [teachers W3C validator]()
+        [teachers W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Flanguageschoolproject.herokuapp.com%2Fteachers%2F)
 
         ![teachers](documentation/testing/html/teachers/htmlteachers.png)
 
@@ -450,35 +471,24 @@ The website functionality with all user stories has been tested manually while l
 
         login.html
 
-        [login W3C validator]()
+        [login W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Flanguageschoolproject.herokuapp.com%2Faccounts%2Flogin%2F)
 
         ![login](documentation/testing/html/account/htmllogin.png)
 
 
         signup.html
 
-        [signup W3C validator]()
+        [signup W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Flanguageschoolproject.herokuapp.com%2Faccounts%2Fsignup%2F)
 
         ![signup](documentation/testing/html/account/htmlsignup.png)
 
 
-        logout.html
+        Propper authentication needed to access this page
+        - logout.html
 
         [logout W3C validator]()  
 
         ![logout](documentation/testing/html/account/htmllogout.png)
-
-    - Errors
-
-        [404 W3C validator]()
-
-        ![404](documentation/testing/html/errors/html404.png)
-
-        [500 W3C validator]()
-
-        ![500](documentation/testing/html/errors/html404.png)
-
-
 
 
     </details>
