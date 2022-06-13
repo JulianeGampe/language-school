@@ -94,7 +94,7 @@ Wireframes created with Balsamiq were used to plan the layout of the website.
 
 ### Flowchart
 
-A flowchart createt with Power Point was used to plan the models for the website.
+A flowchart created with Power Point was used to plan the models for the website.
 
 ![Flowchart](documentation/wireframes/modelflowchart.png)
 ![Flowchart Two](documentation/wireframes/modelflowcharttwo.png)
@@ -105,24 +105,169 @@ A flowchart createt with Power Point was used to plan the models for the website
 
 - __Navigation Bar__
 
-    - ....
+    - Featured on all pages the navigation bar includes links to the Homepage, Our Courses, About Us and My Profile. Our Courses has a dropdown menu with sorting options. About Us has a dropdown menu linking to Course Information, Our Teachers and Contact. When not logged in My Profile links to Login and Sign Up. When logged in the My Profile page is accessible and Logout is visible, while Sign Up and Login disappear. When the admin is logged in there is a link to the Add Course page as well. Additionally, when logged in the menu link to the Shopping Bag will appear, displaying the current total in the shopping bag as well.
+    - The navigation bar is fully responsive and identical on all pages to offer easy navigation.
+    - It allows the user to easily navigate between the different pages across all devices, without having to use the “back” or “forward” buttons.
+    - On small screen sizes the navbar will collapse into a toggler icon to keep the page well arranged.
 
-![Navigation Bar](documentation/screenshots/navigationbar.png)
-![Navigation Bar Toggler](documentation/screenshots/navigationbartoggler.png)
+![Navigation Bar](documentation/screenshots/navbar.png)
+![Navigation Bar Toggler](documentation/screenshots/navbartoggler.png)
 
 - __Home Page__
 
   - The Home Page will allow the user to see the aim and purpose of the website.
+  - It includes links to the courses page as well as to the Course Structure, Teachers and Contact Page.
+  - There is also a form to sign up for the newsletter.
 
-![Home Page](documentation/screenshots/homepage.png)
+![Home Page](documentation/screenshots/homepageone.png)
+![Home Page](documentation/screenshots/homepagetwo.png)
+
+- __Our Courses Page__
+
+    - The Our Courses Page allows the user to see all offered courses.
+    - It includes a dropdown menu to sort the courses as well as a searchbar to search for courses. This allows the students to easily find a suitable course for them.
+
+![Our Courses](documentation/screenshots/courses.png)
+
+- __Course Detail Page__
+
+    - On the Course Detail Page the student can find all course information including the course description.
+    - There is a button to add the course to the shopping bag, if there are still places left for the course. Otherwise there will be a message, that the course is already booked out. The course can only be added once to the bag. Once the course is in the bag, that message will be displayed. It can only be added once, as the name on the booking has to match the name of the student participating in the course.
+    - If the student has already booked the course, a message with a link to the confirmation will be displayed.
+    - When logged in as admin there will also be the buttons to edit or delete the course.
+
+- Course Detail Admin:
+![Course Detail Admin](documentation/screenshots/coursedetailadmin.png)
+- Course Detail Student:
+![Course Detail Student](documentation/screenshots/coursedetailstudent.png)
+
+- __Course Information Page__
+
+    - The course information page offers an explanation and overview of the language levels and the offered course formats.
+    - This will allow especially new students to get addiotional information regarding the course structure and they can decide for the most suitable course for them.
+
+![Course Information](documentation/screenshots/courseinformation.png)
+
+- __Our Teachers Page__
+
+    - The Our Teachers page offers a short introduction and information about the teachers of Learn German Online.
+    - This will allow the students to assure themselves of the qualifacations of the schools teachers.
+
+![Our Teachers](documentation/screenshots/teachers.png)
+
+- __Contact Page__
+
+    - On the Contact Page the students can find different options on how to contact the language school.
+    - It offers a Contact Form that can be filled in with individual questions as well.
+    - This allows students who have any doubts to address their questions directly on the website.
+
+![Our Teachers](documentation/screenshots/contact.png)
+
+- __Sign Up Page__
+
+    - The Sign Up Page allows the students to create an account.
+    - It requires a username, password and email address.
+    - A confirmation email will be sent to the student with a link to verify the email address.
+
+![Sign Up](documentation/screenshots/signup.png)
+
+- __Login Page__
+
+    - The Login Page allows students, who already created an account, to login with their username and password.
+
+![Login](documentation/screenshots/signin.png)
+
+- __Logout Page__
+
+    - The Logout Page allows the user to logout.
+
+![Logout](documentation/screenshots/signout.png)
+
+- __Shopping Bag Page__
+
+    - Logged in students can add courses to their shopping bag.
+    - The shopping bag page displays the chosen courses or, if no courses a chosen yet, a link to the courses page.
+    - The courses in the shopping bag can also be removed from the bag by click on the respective button.
+    - When the students want to purchase the chosen course(s) they can click on the Secure Checkout button, which also displays the total order amount.
+
+![Shopping Bag](documentation/screenshots/shoppingbag.png)
+
+- __Secure Checkout Page__
+
+    - This page allows the students to complete their purchase by entering their information and credit card details.
+    - If the student has their address already saved on their profile, this data will be prefilled into the checkout form.
+    - Respectively the student can also check the box to save the entered information to the profile.
+
+![Checkout Top Page](documentation/screenshots/checkoutone.png)
+![Checkout Bottom Page](documentation/screenshots/checkouttwo.png)
 
 
+- __Checkout Success/Confirmation Page__
+
+    - The Checkout Success Page will display an overview of the order.
+    - It appears right after successfully making a purchase.
+    - It can also be accessed later on from the booking history in the profile page.
+
+![Checkout Confirmation](documentation/screenshots/checkoutconfirmation.png)
+
+- __My Profile Page__
+
+    - The profile page is visible when logged in.
+    - The profile page allows the user to save or edit their address information. If they have already made a purchase with the option to save their information checked, this information will be prefilled here.
+    - On the profile page the student can see their booked coures as well. For each booked course the student can also access the booking confirmation by clicking on the order number.
+
+![Profile Page](documentation/screenshots/profile.png)
+
+- __Add Course Page__
+
+    - The add course page is visible to the admin only, when logged in.
+    - It allows the admin to add a course directly from the frontend.
+
+![Add Course Page](documentation/screenshots/addcourse.png)
+
+- __Edit Course Page__
+
+    - When logged in as admin the Edit Button will appear on the Course Detail Page of the chosen course.
+    - The edit course page is visible to the admin only.
+    - It allows the admin to edit a course directly from the frontend.
+
+![Edit Course Page](documentation/screenshots/editcourse.png)
+
+- __Delete Course Page__
+
+    - When logged in as admin the Delete Button will appear on the Course Detail Page of the chosen course.
+    - The delete course page is visible to the admin only.
+    - It allows the admin to delete a course directly from the frontend.
+
+![Delete Course Page](documentation/screenshots/deletecourse.png)
+
+- __Footer__
+
+    - The footer displays a link to the social media website of Learn German Online, so that the student can easily follow them there.
+    - There is also a link to the privacy policy.
+
+![Footer](documentation/screenshots/footer.png)
+
+- __Messages__
+
+    - Messages are displayed at the top of the screen to notify the student about the outcome of their actions (i.e. adding an item to the shopping bag, updating the profile).
+    - The same applies to the admin. The admin will also be notified when the have added, edited or deleted a course.
+    - This way the student/admin will know when they have changed content.
+
+![Messages Example One](documentation/screenshots/messageone.png)
+![Messages Example Two](documentation/screenshots/messagetwo.png)
 
 ### Features Left to Implement
 
-- __Feature__
+- __Display Teacher for course & Course search by teacher__
 
+    - Display which teacher is teaching the course and add the functionality to search for courses with specific teachers
 
+- __Teacher Admin__
+
+    - An admin page especially for the teachers, where they can see an overview of the courses they teach together with information about the attending students.
+    - It could also contain the functionality to see the submitted contact forms on the frontend and mark them as replied, when a reply has been sent to the student.
+    - Additionally the email addresses for the newsletter could be visible on the frontend for teachers who are in charge of creating the newsletter.
 
 ## Database Models
 
