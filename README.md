@@ -368,7 +368,8 @@ Due to the length of testing, you can see all tests in the [TESTING.md](TESTING.
       1. DATABASE_URL is the connection to the Postgres database and is added to the project
       2. add the SECRET_KEY from the django project
       3. add the CLOUDINARY_URL
-      4. add the TINYMCE_API key
+      4. add the STRIPE_PUBLIC_KEY and STRIPE_SECRET_KEY for payments via stripe
+      5. add the EMAIL_HOST_PASS, EMAIL_HOST_USER and DEFAULT_FROM_EMAIL for sending emails
 
   - Link the Heroku app to the repository in the _Deploy_ tab
 
@@ -382,7 +383,7 @@ Due to the length of testing, you can see all tests in the [TESTING.md](TESTING.
   ![Deploy result](documentation/screenshots/deployresult.png)
 
 
-The live link can be found here - https://
+The live link can be found here - https://languageschoolproject.herokuapp.com/
 
 ### Local Deployment
 
@@ -400,7 +401,8 @@ You must set the keys for your environment variables in env.py:
 - os.environ["DATABASE_URL"] 
 - os.environ["SECRET_KEY"]
 - os.environ["CLOUDINARY_URL"]
-- os.environ["TINYMCE_API"]
+- os.environ["STRIPE_PUBLIC_KEY"]
+- os.environ["STRIPE_SECRET_KEY"]
 
 ## Credits 
 
