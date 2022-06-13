@@ -10,6 +10,9 @@ Order Total: EUR {{ order.total }}
 You can view your order and your booked courses anytime by logging in to our website
 and navigating to your profile page.
 
+A link to the Zoom Meeting for the booked course(s) will be sent 48 hours
+prior to the courses start date.
+
 If you have any questions, feel free to contact us.
 
 We are looking forward to seeing you soon in class!
