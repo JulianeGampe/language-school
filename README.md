@@ -69,9 +69,9 @@ The contrasts of all colors have been checked in a contrast checker. The contras
 
 ### Typography 
 
-Google Fonts .... 
+Google Fonts has been used to find the font, that is displayed on the website. [Source Serif Pro](https://fonts.google.com/specimen/Source+Serif+Pro#standard-styles) is a serif typeface. As described on Google Fonts the font is designed for a digital environment with simplified letter shapes that are highly readable. It was used for the website to make the content easy to read and navigate for potential and current students.
 
-To provide visual cues icons from [Font Awesome](https://fontawesome.com/) have been used in ....
+To provide visual cues icons from [Font Awesome](https://fontawesome.com/) have been used for the social media icon in the footer as well as on the buttons and the exlamation mark of the checkout page and the search icon for the search bar on the courses page.
 
 ### Wireframes
 
