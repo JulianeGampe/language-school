@@ -129,18 +129,18 @@ The website functionality with all user stories has been tested manually while l
 
 ### Javascript
 - JavaScript
-  - JavaScript was used for the time out function of django contrib messages.
-    - This was tested manually. The messages displayed dissappear automatically.
- 
-    ![Timeout](documentation/testing/js/jstimeoutfunction.png)
-
-  - JavaScript was used ..... 
-    - This was tested manually as well. 
-    - .....
-
-    ![Image](documentation/testing/....)
-
-
+    - JavaScript was used for the time out function of django contrib messages.
+         - This was tested manually. The messages displayed dissappear automatically.
+    - JavaScript was used for the sorting dropdown on the courses page.
+        - This code was taken from the Boutique Ado walkthrough project from Code Institute
+        - This was tested manually as well. 
+        - The sorting box works.
+        ![Sorting](documentation/screenshots/sortingandsearching.png)
+        ![Level](documentation/screenshots/sortlevel.png)
+        ![Weekday](documentation/screenshots/sortweekday.png)
+    - JavaScript was used to handle stripe payments in stripe_elements.js in the checkout app
+        - This code was taken from the Boutique Ado walkthrough project from Code Institute and comes from www.stripe.com
+        - This was tested manually. The checkout with stripe test credit cards works.
 
 ### Browser Compatibility
 
