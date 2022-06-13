@@ -119,7 +119,9 @@ As a first step the color extractor from [Adobe Color](https://color.adobe.com/c
 
 The light blue color #E4EAF2 from the homepage image has been used as the background color on all pages. The darker blue color #B8C6D9 from the homepage image has been used as the background color for the navbar and footer.
 
-The almost black color #262626 from the navbar image has been used as a background color for the buttons on the website. The dark red color #8C0303 has been used as the font color for the disclaimer in the footer and on the checkout page as well as for the warning on the delete course page.
+The almost black color #262626 from the navbar image has been used as a background color for the buttons on the website. The dark red color #8C0303 had been used as the background color for the hovered buttons.
+
+The dark red color #8C0303 has also been used as the font color for the disclaimer in the footer and on the checkout page as well as for the warning on the delete course page.
 
 Black #000 was used as font color throughout the page as it contrasts well with the chosen background colors. White #FFF was used as the background color for the buttons as this contrasts well with the chosen button colors.
 
