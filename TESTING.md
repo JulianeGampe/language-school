@@ -216,44 +216,158 @@ The website functionality with all user stories has been tested manually while l
     <details>
     <summary>Click to expand to view the PEP8 testing</summary>
  
-      - ..... app
+      - bag app
 
         urls.py
         
-        ![urls.py](documentation/testing/pep8/aboutme/pep8aboutmeurls.png)
+        ![urls.py](documentation/testing/pep8/bag/pep8bagurls.png)
 
         views.py
 
-        ![views.py](documentation/testing/pep8/aboutme/pep8aboutmeviews.png)
+        ![views.py](documentation/testing/pep8/bag/pep8bagviews.png)
 
-      - ..... app
+      - checkout app
 
         admin.py
 
-        ![admin.py](documentation/testing/pep8/comments/pep8commentsadmin.png)
+        ![admin.py](documentation/testing/pep8/checkout/pep8checkoutadmin.png)
 
         forms.py
 
-        ![forms.py](documentation/testing/pep8/comments/pep8commentsforms.png)
+        ![forms.py](documentation/testing/pep8/checkout/pep8checkoutforms.png)
 
         models.py
 
-        ![models.py](documentation/testing/pep8/comments/pep8commentsmodels.png)
+        ![models.py](documentation/testing/pep8/checkout/pep8checkoutmodels.png)
+
+        signals.py
+
+        ![signals.py](documentation/testing/pep8/checkout/pep8checkoutsignals.png)
 
         urls.py
 
-        ![urls.py](documentation/testing/pep8/comments/pep8commentsurls.png)
+        ![urls.py](documentation/testing/pep8/checkout/pep8checkouturls.png)
 
         views.py
 
-        ![views.py](documentation/testing/pep8/comments/pep8commentsviews.png)
+        ![views.py](documentation/testing/pep8/checkout/pep8checkoutviews.png)
 
+
+      - contact app
+
+        admin.py
+
+        ![admin.py](documentation/testing/pep8/contact/pep8contactadmin.png)
+
+        forms.py
+
+        ![forms.py](documentation/testing/pep8/contact/pep8contactforms.png)
+
+        models.py
+
+        ![models.py](documentation/testing/pep8/contact/pep8contactmodels.png)
+
+        urls.py
+
+        ![urls.py](documentation/testing/pep8/contact/pep8contacturls.png)
+
+        views.py
+
+        ![views.py](documentation/testing/pep8/contact/pep8contactviews.png)
+
+      - courseinfo app
+
+        urls.py
+        
+        ![urls.py](documentation/testing/pep8/courseinfo/pep8courseinfourls.png)
+
+        views.py
+
+        ![views.py](documentation/testing/pep8/courseinfo/pep8courseinfoviews.png)
+
+
+      - courses app
+
+        admin.py
+
+        ![admin.py](documentation/testing/pep8/courses/pep8coursesadmin.png)
+
+        forms.py
+
+        ![forms.py](documentation/testing/pep8/courses/pep8coursesforms.png)
+
+        models.py
+
+        ![models.py](documentation/testing/pep8/courses/pep8coursesmodels.png)
+
+        urls.py
+
+        ![urls.py](documentation/testing/pep8/courses/pep8coursesurls.png)
+
+        views.py
+
+        ![views.py](documentation/testing/pep8/courses/pep8coursesviews.png)
+
+      - home app
+
+        admin.py
+
+        ![admin.py](documentation/testing/pep8/home/pep8homeadmin.png)
+
+        forms.py
+
+        ![forms.py](documentation/testing/pep8/home/pep8homeforms.png)
+
+        models.py
+
+        ![models.py](documentation/testing/pep8/home/pep8homemodels.png)
+
+        urls.py
+
+        ![urls.py](documentation/testing/pep8/home/pep8homeurls.png)
+
+        views.py
+
+        ![views.py](documentation/testing/pep8/home/pep8homeviews.png)
 
       - main app languageschool
 
         urls.py
 
-        ![urls.py](documentation/testing/pep8/travelblog/pep8travelblogurls.png)
+        ![urls.py](documentation/testing/pep8/languageschool/pep8languageschoolurls.png)
+
+        views.py
+
+        ![views.py](documentation/testing/pep8/languageschool/pep8languageschoolviews.png)
+
+      - profiles app
+
+        forms.py
+
+        ![forms.py](documentation/testing/pep8/profiles/pep8profilesforms.png)
+
+        models.py
+
+        ![models.py](documentation/testing/pep8/profiles/pep8profilesmodels.png)
+
+        urls.py
+
+        ![urls.py](documentation/testing/pep8/profiles/pep8profilesurls.png)
+
+        views.py
+
+        ![views.py](documentation/testing/pep8/profiles/pep8profilesviews.png)
+
+      - teachers app
+
+        urls.py
+        
+        ![urls.py](documentation/testing/pep8/teachers/pep8teachersurls.png)
+
+        views.py
+
+        ![views.py](documentation/testing/pep8/teachers/pep8teachersviews.png)
+
 
     </details>
 
