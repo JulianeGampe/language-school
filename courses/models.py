@@ -14,6 +14,9 @@ WEEKDAY = (
 
 
 class Level(models.Model):
+    """
+    Model for the Language Level (i.e. A1.1, B1.2)
+    """
     name = models.CharField(max_length=4)
     part = models.PositiveIntegerField(default=1)
 
@@ -22,6 +25,9 @@ class Level(models.Model):
 
 
 class Format(models.Model):
+    """
+    Model for the class format (i.e. Standard, Business)
+    """
     name = models.CharField(max_length=254)
 
     def __str__(self):
@@ -29,6 +35,9 @@ class Format(models.Model):
 
 
 class Course(models.Model):
+    """
+    Model for the course, including all course information
+    """
     name = models.CharField(max_length=254)
     level = models.ForeignKey(
         'Level', null=True, blank=False, on_delete=models.CASCADE
