@@ -329,11 +329,13 @@ A flowchart created with Power Point was used to plan the models for the website
 
 ## Database Models
 
- - The courses, checkout, contact and homepage app require databases to store information. The following models have been build:
+ - The courses, checkout, profile, contact; and homepage app require databases to store information. The following models have been build:
     - courses: Level, Format, Course
     - checkout: Order, OrderLineItem
+    - profile: UserProfile
     - contact: Contact
     - homepage: Newsletter
+ 
 
  __Level & Format__
 
@@ -350,15 +352,19 @@ A flowchart created with Power Point was used to plan the models for the website
 
  __OrderLineItem__
 
-![OrderLineItem](documentation/screenshots/orderlineitemmodel.png)
+![OrderLineItem Model](documentation/screenshots/orderlineitemmodel.png)
+
+ __UserProfile__
+
+![UserProfile Model](documentation/screenshots/userprofilemodel.png)
 
  __Contact__
 
-![Contact](documentation/screenshots/contactmodel.png)
+![Contact Model](documentation/screenshots/contactmodel.png)
 
  __Newsletter__
 
-![Newsletter](documentation/screenshots/newslettermodel.png)
+![Newsletter Model](documentation/screenshots/newslettermodel.png)
 
 ## Technologies Used
 
