@@ -6,6 +6,64 @@ For the admin there is also the possibility to add new courses directly from the
 
 ![Responsive Mockup](documentation/screenshots/amiresponsive.png)
 
+## Business Model
+
+The purpose of the business Learn German Online is to sell and conduct online German classes. It was designed for students who would like to learn German as a foreign language for different reasons, be it as a hobby or for work. 
+
+It is a B2C business model, selling a digital service in form of online language courses with a single payment for the whole course. A variety of different courses is available.
+
+The purpose of the website is to display and offer and sell all available courses. As it is an online business, the website is the only point of sale for their courses. Therefore the website needs to permit completing the purchase of all classes online.
+
+The classes themselves will also be held online via an online communication tool (i.e. Zoom).
+
+### SEO
+#### Keywords
+
+For SEO purposes a keyword search has been conducted. The following keywords were found and implemented into the website:
+
+    - German
+    - German courses
+    - Online School
+    - Live Classes
+    - Learn Online
+    - Learn at Home
+    - Complete Beginner
+    - German Teachers
+    - Speaking German
+    - Refresh German
+    - Business German
+    - Germany, Austria, Switzerland
+    - Languages
+    - European Framework of Reference for Languages (CEFR)
+
+#### Marketing Types
+
+The users of Learn German Online would be mostly adults. This could be college/university students who need German for their studies, business professionals who need German for their job or people who like to learn languages as a hobby.
+
+These users would most likely use social media and be very used to working with computers, beeing either digital immigrants or digital natives.
+
+The main marketing goal of Learn German Online would be to find as many students as possible online, as it is an online only business.
+
+The following marketing types might be suitable for Learn German Online:
+
+- Content Marketing: 
+    - This could be short online videos that explain German grammar or vocabulary with a link to the Learn German Online website.
+- Social Media Marketing:
+    - This could be organic social media marketing for example on Facebook or Instagram, which allow to upload videos as well.
+- Email Marketing:
+    - New Courses can be advertised through the Newsletter for which students can sign up on the Learn German Online homepage.
+
+The following Facebook mockup page has been created:
+
+![Facebook Mockup]()
+
+
+#### Other
+ 
+ - a sitemap.xml has been added to the project
+ - a robots.txt has been added to the project
+ - a link to to the [Council of Europe Website](https://www.coe.int/en/web/common-european-framework-reference-languages/table-1-cefr-3.3-common-reference-levels-global-scale) has been implemented on the course information page as a link to other high quality websites
+
 ## User Stories
 
 ### Student
