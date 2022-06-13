@@ -10,6 +10,7 @@
             <h2>Delete course</h2>
         </div>
     </div>
+    <!-- delete warning and explanation -->
     <div class="row mt-5">
         <div class="col-md-8 offset-md-1">
             <p class="darkred">
@@ -26,6 +27,7 @@
             </p>
         </div>
     </div>
+    <!-- delete and cancel button -->
     <div class="row mt-5">
         <div class="col-md-8 offset-md-1">
             <form action="{% url 'deletecourse' course.id %}" method="POST" enctype="multipart/form-data">

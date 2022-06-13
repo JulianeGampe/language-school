@@ -7,6 +7,7 @@
 
 <div class="container mb-5">
     <div class="card col-md-8 offset-md-1 mt-5">
+        <!-- card to display specific course details -->
         <div class="card-body">
             <h5 class="card-title">{{ course.name }}</h5>
             <h6 class="card-subtitle mb-2 text-muted">{{ course.level }} {{ course.format }}</h6>
@@ -36,6 +37,7 @@
             </p>
             {% if user.is_authenticated %}
                 <ul class="list-group list-group-flush">
+                    <!-- Display if course was previously booked -->
                     {% for order in orders %}
                     {% for item in order.lineitems.all %}
                     {% if item.course.name == course.name %}
@@ -45,7 +47,7 @@
                     {% endfor %}
                     {% endfor %}
                     <li class="list-group-item"></li>
-                    
+                    <!-- Display if the course is already in the shopping bag -->
                     {% if bagitems %}
                     {% for item in bagitems %}
                     {% if item.course.id == course.id %}
@@ -54,22 +56,27 @@
                     {% endfor %}
                     {% endif %}
                 </ul>
+                <!-- display if the course has places left and can be booked -->
                 {% if course.limit > 0 %}
+                <!-- form to add the course to the shopping bag -->
                 <form action="{% url 'addbag' course.id %}" method="POST">
                     {% csrf_token %}
                     <input type="submit" class="btn btn-black" value="Add to Shopping Bag">
                     <input type="hidden" name="redirecturl" value="{{ request.path }}">
                 </form>
+                <!-- general information -->
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Important: The name on the booking has to match the name of the course participant.</li>
                     <li class="list-group-item">To book a course for a different person, we recommend creating another account.</li>
                 </ul>
+                <!-- display if the course is fully booked -->
                 {% else %}
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">This course is already booked out.</li>
                 </ul>
                 {% endif %}
             {% else %}
+            <!-- display if the user is not logged in -->
                 {% if course.limit > 0 %}
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Please <a href="{% url 'account_login' %}">login</a> to book this course</p></li>
@@ -80,6 +87,7 @@
                 </ul>
                 {% endif %}
             {% endif %}
+            <!-- edit and delete button for the admin -->
             {% if request.user.is_superuser %}
                 <a class="btn" href="{% url 'editcourse' course.id %}">Edit Course</a>
                 <a class="btn" href="{% url 'deletecourse' course.id %}">Delete Course</a>

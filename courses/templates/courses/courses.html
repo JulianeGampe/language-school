@@ -10,6 +10,7 @@
             <h2>Our Courses</h2>
         </div>
     </div>
+    <!-- search bar -->
     <div class="row mt-5">
         <div class="col-md-6 offset-md-1">
             <form method="GET" action="{% url 'allcourses' %}">
@@ -24,18 +25,22 @@
                     </div>
                 </div>
             </form>
+            <!-- number of search results and search term for bookable courses -->
             <p class="text-muted text-center">
                 {{ coursecount }} Courses{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
             </p>
+            <!-- number of search results and search term for booking closed courses, visible to admin -->
             {% if request.user.is_superuser %}
             <p class="text-muted text-center">
                + {{ coursecountclosed }} "Booking closed" Courses{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
             </p>
             {% endif %}
+            <!-- reset search button -->
             <p class="mt-3">
                 <a href="{% url 'allcourses' %}" class="btn">Reset search and display all courses.</a>
             </p>
         </div>
+        <!-- sorting drop down box -->
         <div class="col-md-4 offset-md-1">
             <div class="sort-select-wrapper w-80">
                 <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
@@ -51,7 +56,7 @@
             </div>
         </div>
     </div>
-
+    <!-- table to display the coures -->
     <div class="row">
         <div class="col-md-10 offset-md-1 mt-5">
             <table class="table">
@@ -72,6 +77,7 @@
                     </th>
                 </thead>
                 <tbody>
+                <!-- only bookable courses will display -->
                 {% for course in courses %}
                 {% if course.status == 1 %}
                     <tr>
@@ -118,6 +124,7 @@
     </div>
 
     {% if request.user.is_superuser %}
+    <!-- table for admin with the courses where booking is closed -->
     <div class="row mt-5">
         <div class="col-md-8 offset-md-1">
             <h2>Courses with status "Booking closed"</h2>
@@ -143,6 +150,7 @@
                     </th>
                 </thead>
                 <tbody>
+                <!-- display only the booking closed courses -->
                 {% for course in courses %}
                 {% if course.status == 0 %}
                     <tr>

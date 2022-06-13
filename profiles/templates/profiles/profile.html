@@ -10,6 +10,7 @@
     <div class="row mt-5">
         <div class="col-lg-5 offset-lg-1">
             <h2 class="pb-3">My Profile</h2>
+            <!-- form to update the profile -->
             <form action="{% url 'profile' %}" method="POST" id="profile-update-form">
                 {% csrf_token %}
                 {{ form|crispy }}
@@ -18,6 +19,7 @@
         </div>
         <div class="col-lg-5 mt-5 mt-lg-0">
             <h2>My booked courses</h2>
+            <!-- table to display the booked courses -->
             <table class="table">
                 <thead>
                     <th class="d-none d-sm-table-cell">Level</th>
@@ -39,6 +41,7 @@
                     <th>Order Number</th>
                 </thead>
                 <tbody>
+                    <!-- display the individual booked coures -->
                     {% for order in orders %}
                     {% for item in order.lineitems.all %}
                     <tr>

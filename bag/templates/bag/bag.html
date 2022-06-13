@@ -10,6 +10,7 @@
             <h2>Shopping Bag</h2>
         </div>
     </div>
+    <!-- Display items in bag if there are any -->
     {% if bagitems %}
     <div class="row mt-5">
         <div class="col-md-6 offset-md-1 fw-bold fs-4">
@@ -40,6 +41,7 @@
         <a href="{% url 'allcourses' %}">Search for more courses</a>
     </div>
     {% else %}
+    <!-- display if there are not bagitems-->
     <div class="row mt-5">
         <div class="col-md-8 offset-md-1 fs-5">
             <p>No courses selected yet</p> 
