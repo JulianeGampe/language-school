@@ -470,6 +470,10 @@ You must set the keys for your environment variables in env.py:
 - os.environ["STRIPE_PUBLIC_KEY"]
 - os.environ["STRIPE_SECRET_KEY"]
 
+To get your CLOUDINARY_URL you can go to the [Cloudinary Website](https://cloudinary.com/). After creating an account you will find your API Environment variable in your dashboard.
+
+To get your STRIPE_PUBLIC_KEY and STRIPE_SECRET_KEY you can go to the [Stripe Website](https://stripe.com/en-ie). After creating an account you will find your API keys in the _developers_ menu under the _API keys_ section.
+
 ## Credits 
 
 ### Content
