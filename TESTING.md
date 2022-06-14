@@ -420,9 +420,9 @@ The website functionality with all user stories has been tested manually while l
 
         ![course detail](documentation/testing/html/courses/htmlcoursedetail.png)
 
-        [courses W3C validator]()
+        [courses W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Flanguageschoolproject.herokuapp.com%2Fcourses%2F%3Fsort%3Dweekday%26direction%3Dasc)
 
-        ![courses course](documentation/testing/html/courses/htmlcourses.png)
+        ![courses](documentation/testing/html/courses/htmlcourses.png)
 
 
         Propper authentication needed to access these pages:
