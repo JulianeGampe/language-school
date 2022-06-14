@@ -26,7 +26,17 @@ def allcourses(request):
                 direction = request.GET['direction']
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
-            courses = courses.order_by(sortkey)
+            if sort == 'format' or sort == 'level':
+                # strictly for format and level sort by name field
+                name = str(sort) + '__name'
+                if direction == 'desc':
+                    sortkey = f'-{name}'
+                else:
+                    sortkey = f'{name}'
+                courses = courses.order_by(sortkey)
+            else:
+                # all other sorting
+                courses = courses.order_by(sortkey)
 
         if 'q' in request.GET:
             query = request.GET['q']
