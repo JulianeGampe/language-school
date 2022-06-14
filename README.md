@@ -152,7 +152,7 @@ Wireframes created with Balsamiq were used to plan the layout of the website.
 ![Wireframe Shopping Bag](documentation/wireframes/shoppingbag.png)
 ![Wireframe Shopping Bag Mobile](documentation/wireframes/shoppingbagmobile.png)
 
-### Data Structure
+## Data Structure
 
 A data structure overview created with Power Point was used to plan the models for the website.
 
@@ -163,6 +163,19 @@ My three custom models are:
 
 ![Datastructure](documentation/wireframes/modelflowchart.png)
 ![Datastructure Two](documentation/wireframes/modelflowcharttwo.png)
+
+## CRUD
+
+The project has the following CRUD functionalities:
+
+- sign up
+- purchasing courses
+- newsletter subscription
+- contact form
+- adding a course (admin)
+- editing a course (admin)
+- deleting a course (admin)
+- adding/updating profile information
 
 ## Features 
 
