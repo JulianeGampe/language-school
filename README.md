@@ -152,12 +152,17 @@ Wireframes created with Balsamiq were used to plan the layout of the website.
 ![Wireframe Shopping Bag](documentation/wireframes/shoppingbag.png)
 ![Wireframe Shopping Bag Mobile](documentation/wireframes/shoppingbagmobile.png)
 
-### Flowchart
+### Data Structure
 
-A flowchart created with Power Point was used to plan the models for the website.
+A data structure overview created with Power Point was used to plan the models for the website.
 
-![Flowchart](documentation/wireframes/modelflowchart.png)
-![Flowchart Two](documentation/wireframes/modelflowcharttwo.png)
+My three custom models are:
+- Course
+- Contact
+- Newsletter
+
+![Datastructure](documentation/wireframes/modelflowchart.png)
+![Datastructure Two](documentation/wireframes/modelflowcharttwo.png)
 
 ## Features 
 
