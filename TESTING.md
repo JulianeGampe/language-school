@@ -384,9 +384,9 @@ The website functionality with all user stories has been tested manually while l
 
     - Bag
 
-        Propper authentication needed to access this page
+        Propper authentication needed to access this page:
 
-        [bag W3C validator]()
+        - bag.html
 
         ![bag](documentation/testing/html/bag/htmlbag.png)
 
@@ -395,13 +395,10 @@ The website functionality with all user stories has been tested manually while l
         Propper authentication needed to access these pages
 
         - checkout.html
-        - checkoutsuccess.html
-
-        [checkout W3C validator]()
 
         ![checkout](documentation/testing/html/checkout/htmlcheckout.png)
 
-        [checkout success W3C validator]()
+        - checkoutsuccess.html
 
         ![checkout success](documentation/testing/html/checkout/htmlcheckoutsuccess.png)
 
@@ -419,8 +416,6 @@ The website functionality with all user stories has been tested manually while l
 
     - Courses
 
-
-
         [course detail W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Flanguageschoolproject.herokuapp.com%2Fcourses%2F29%2F)
 
         ![course detail](documentation/testing/html/courses/htmlcoursedetail.png)
@@ -429,23 +424,18 @@ The website functionality with all user stories has been tested manually while l
 
         ![courses course](documentation/testing/html/courses/htmlcourses.png)
 
-        
 
         Propper authentication needed to access these pages:
 
         - add_course.html
-        - delete_course.html
-        - edit_course.html
-
-        [add course W3C validator]()
 
         ![add course](documentation/testing/html/courses/htmladdcourse.png)
 
-        [delete course W3C validator]()
+        - delete_course.html
 
         ![delete course](documentation/testing/html/courses/htmldeletecourse.png)
 
-        [edit course W3C validator]()
+        - edit_course.html
 
         ![edit course](documentation/testing/html/courses/htmleditcourse.png)
     
@@ -460,8 +450,6 @@ The website functionality with all user stories has been tested manually while l
         Propper authentication needed to access this page
 
         - profile.html
-
-        [profiles W3C validator]()
 
         ![profile](documentation/testing/html/profiles/htmlprofile.png)
 
@@ -488,9 +476,8 @@ The website functionality with all user stories has been tested manually while l
 
 
         Propper authentication needed to access this page
-        - logout.html
 
-        [logout W3C validator]()  
+        - logout.html
 
         ![logout](documentation/testing/html/account/htmllogout.png)
 
