@@ -64,7 +64,7 @@ The website functionality with all user stories has been tested manually while l
 15.	As a student I can sort the list of all available courses by course format so that I can quickly choose courses from my preferred course format.
     - A drop down menu to sort the courses is available
         ![Sorting](documentation/screenshots/sortingandsearching.png)
-    - Courses can be sorted by level
+    - Courses can be sorted by format
         ![Format](documentation/screenshots/sortformat.png)
 16.	As a student I can sort the list of all available courses by the start date of the course so that I can choose a course that starts on a suitable date.
     - A drop down menu to sort the courses is available
