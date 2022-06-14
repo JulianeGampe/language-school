@@ -46,8 +46,8 @@
                 <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                     <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
                     <option value="weekday_asc" {% if current_sorting == 'weekday_asc' %}selected{% endif %}>Weekday</option>
-                    <option value="format_desc" {% if current_sorting == 'format_desc' %}selected{% endif %}>Format (A to Z)</option>
-                    <option value="format_asc" {% if current_sorting == 'format_asc' %}selected{% endif %}>Format (Z to A)</option>
+                    <option value="format_asc" {% if current_sorting == 'format_asc' %}selected{% endif %}>Format (A to Z)</option>
+                    <option value="format_desc" {% if current_sorting == 'format_desc' %}selected{% endif %}>Format (Z to A)</option>
                     <option value="level_asc" {% if current_sorting == 'level_asc' %}selected{% endif %}>Level (A1.1 - C1.2)</option>
                     <option value="level_desc" {% if current_sorting == 'level_desc' %}selected{% endif %}>Level (C1.2 - A1.1)</option>
                     <option value="startdate_asc" {% if current_sorting == 'startdate_asc' %}selected{% endif %}>Startdate (next first)</option>
