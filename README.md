@@ -478,12 +478,7 @@ To get your STRIPE_PUBLIC_KEY and STRIPE_SECRET_KEY you can go to the [Stripe We
 
 ### Content
 
-- The Code Institute Walkthrough Project [Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1) and its respective code have been used as a major guidance throughout the project. The following larger parts have been taken explicitly from this project:
-    - bag: contexts.py
-    - checkout: models, admin.py, signals.py, apps.py, forms.py, css, stripe_elements.js, in views.py the code to sent confirmation emails (taken from webhook_handler.py of the Boutique Ado Walkthrough)
-    - profiles: models (UserProfile Model + @receiver - create or update user profile)
-    - contact: in views.py the code to sent confirmation emails (taken from webhook_handler.py of the Boutique Ado Walkthrough)
-    - courses: the JavaScript for the sorting box in courses.html, the code for the search bar in courses.html and views.py
+- The Code Institute Walkthrough Project [Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1) and its respective code have been used as a major guidance throughout the project. 
 - The [Django Allauth Documentation](https://django-allauth.readthedocs.io/en/latest/installation.html) was used war the allauth setup
 - The [Bootstrap Documenation](https://getbootstrap.com/docs/5.0/components/dropdowns/) was used to create the dropdown menus in the navbar.
 - This [article](https://stackoverflow.com/questions/11754877/troubleshooting-related-field-has-invalid-lookup-icontains) from Stackoverflow was used as a help to make the search work for the foreign key level_name and format_name.
