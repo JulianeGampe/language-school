@@ -494,6 +494,16 @@ The website functionality with all user stories has been tested manually while l
 
     ![Lighthouse](documentation/screenshots/lighthouse.png)
 
+## Error Pages Testing
+
+The error pages 404 and 500 were tested manually.
+
+- Error 404
+    ![Error 404](documentation/testing/errors/error404.png)
+
+- Error 500
+    ![Error 500](documentation/testing/errors/error500.png)
+
 ## Bugs
 ### Fixed Bugs
 
