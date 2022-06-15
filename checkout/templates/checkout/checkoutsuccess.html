@@ -75,6 +75,7 @@
                 {% if order.postcode %}
                 <li class="list-group-item">{{ order.postcode }}</li>
                 {% endif %}
+                <li class="list-group-item">{{ order.city }}</li>
                 <li class="list-group-item">{{ order.country }}</li>
                 <li class="list-group-item">{{ order.phonenumber }}</li>
                 <li class="list-group-item">Order total: {{ order.total }} Euro</li>
