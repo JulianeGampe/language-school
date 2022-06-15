@@ -489,6 +489,19 @@ The website functionality with all user stories has been tested manually while l
 
       ![CSS validation](documentation/testing/css/cssvalidation.png)
 
+
+- JavaScript
+  - No errors were found when passing through [JSHint](https://jshint.com/)
+
+    - Time out function of django contrib messages:
+        ![Timeout](documentation/testing/js/jstimeoutfunction.png)
+    - Sorting dropdown on the courses page:
+        - This code was taken from the Boutique Ado walkthrough project from Code Institute
+        ![Timeout](documentation/testing/js/jssorting.png)
+    - stripe_elements.js in the checkout app:
+        - This code was taken from the Boutique Ado walkthrough project from Code Institute and comes from www.stripe.com
+        ![Stripe Elements](documentation/testing/js/jsstripeelements.png)
+
 - Accessibility
   - The page passes the accessibility test using lighthouse in devtools
 
