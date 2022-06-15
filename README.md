@@ -169,12 +169,13 @@ My three custom models are:
 The project has the following CRUD functionalities:
 
 - sign up
-- purchasing courses
 - newsletter subscription
 - contact form
 - adding a course (admin)
 - editing a course (admin)
 - deleting a course (admin)
+- courses are displayed
+- purchasing courses
 - adding/updating profile information
 
 ## Features 
