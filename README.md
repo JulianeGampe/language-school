@@ -225,7 +225,7 @@ The project has the following CRUD functionalities:
 - __Course Information Page__
 
     - The course information page offers an explanation and overview of the language levels and the offered course formats.
-    - This will allow especially new students to get addiotional information regarding the course structure and they can decide for the most suitable course for them.
+    - This will allow especially new students to get additional information regarding the course structure and they can decide for the most suitable course for them.
 
 ![Course Information](documentation/screenshots/courseinformation.png)
 
@@ -332,7 +332,7 @@ The project has the following CRUD functionalities:
 - __Messages__
 
     - Messages are displayed at the top of the screen to notify the student about the outcome of their actions (i.e. adding an item to the shopping bag, updating the profile).
-    - The same applies to the admin. The admin will also be notified when the have added, edited or deleted a course.
+    - The same applies to the admin. The admin will also be notified when they have added, edited or deleted a course.
     - This way the student/admin will know when they have changed content.
 
 ![Messages Example One](documentation/screenshots/messageone.png)
@@ -418,7 +418,7 @@ The project has the following CRUD functionalities:
 - [Balsamiq](https://balsamiq.com/wireframes/) 
     - was used to create the wireframes.
 - [Microsoft Powerpoint](https://www.microsoft.com/en-ie/microsoft-365/powerpoint)
-    - was used to create the Model flowcharts.
+    - was used to create the data structure overview.
 - [Font Awesome](https://fontawesome.com/) 
     - was used for the icons.
 - [Cloudinary](https://cloudinary.com/) 
@@ -501,10 +501,10 @@ To get your `STRIPE_PUBLIC_KEY` and `STRIPE_SECRET_KEY` you can go to the [Strip
 
 - The Code Institute Walkthrough Project [Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1) and its respective code have been used as a major guidance throughout the project. 
 - The [Django Allauth Documentation](https://django-allauth.readthedocs.io/en/latest/installation.html) was used war the allauth setup
-- The [Bootstrap Documenation](https://getbootstrap.com/docs/5.0/components/dropdowns/) was used to create the dropdown menus in the navbar.
+- The [Bootstrap Documentation](https://getbootstrap.com/docs/5.0/components/dropdowns/) was used to create the dropdown menus in the navbar.
 - This [article](https://stackoverflow.com/questions/11754877/troubleshooting-related-field-has-invalid-lookup-icontains) from Stackoverflow was used as a help to make the search work for the foreign key level_name and format_name.
 - This [article](https://stackoverflow.com/questions/51394261/python-access-second-element-of-list) from Stackoverflow was used as help for the code to prevent double sign up for the newsletter.
-- The [Bootstrap Cards Documenation](https://getbootstrap.com/docs/5.0/components/card/) was used as a help to create the bootstrap cards thoughout the website.
+- The [Bootstrap Cards Documentation](https://getbootstrap.com/docs/5.0/components/card/) was used as a help to create the bootstrap cards thoughout the website.
 - The Font [Source Serif Pro](https://fonts.google.com/specimen/Source+Serif+Pro#standard-styles) was taken from Google Fonts.
 - The [Bootstrap Display Documentation](https://getbootstrap.com/docs/5.0/utilities/display/) was used as a help to display/don't display certain table rows for certain screensizes of the courses table and the booked courses table on the profile page.
 - This [article](https://stackoverflow.com/questions/5439901/getting-a-count-of-objects-in-a-queryset-in-django) from Stackoverflow was used as a help to create the variables coursecount + coursecountclosed to calculate the number of courses found in the search, based on the status of the course.
@@ -521,7 +521,7 @@ To get your `STRIPE_PUBLIC_KEY` and `STRIPE_SECRET_KEY` you can go to the [Strip
     - [Teacher "Lukas"](https://www.pexels.com/photo/man-standing-on-rocky-mountain-under-white-cloudy-sky-442559/)
 - The website icons were taken from [Font Awesome](https://fontawesome.com/)
     - [Search](https://fontawesome.com/v5/icons/search?s=solid)
-    - [Exclamation Markt](https://fontawesome.com/v5/icons/exclamation?s=solid)
+    - [Exclamation Mark](https://fontawesome.com/v5/icons/exclamation?s=solid)
     - [Back Button](https://fontawesome.com/v5/icons/backward?s=solid)
     - [Credit Card](https://fontawesome.com/v5/icons/credit-card?s=solid)
     - [Facebook](https://fontawesome.com/v5/icons/facebook?s=brands)
