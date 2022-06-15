@@ -212,14 +212,14 @@
 -->
 
 <script>
-    /* jshint esversion: 11 */
+    /* jshint esversion: 11, jquery: true */
     $('.btt-link').click(function(e) {
-        window.scrollTo(0,0)
-    })
+        window.scrollTo(0,0);
+    });
 </script>
 
 <script>
-    /* jshint esversion: 11 */
+    /* jshint esversion: 11, jquery: true */
     $('#sort-selector').change(function() {
         var selector = $(this);
         var currentUrl = new URL(window.location);
@@ -239,7 +239,7 @@
 
             window.location.replace(currentUrl);
         }
-    })
+    });
 </script>
 
 {% endblock %}
