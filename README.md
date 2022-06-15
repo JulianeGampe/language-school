@@ -55,8 +55,8 @@ The following marketing types might be suitable for Learn German Online:
 
 The following Facebook mockup page has been created:
 
-![Facebook Mockup]()
-
+![Facebook Mockup](documentation/screenshots/facebookmockup.png)
+The template for this mockup was provided by Code Institute.
 
 #### Other
  
