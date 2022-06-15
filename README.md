@@ -16,6 +16,8 @@ The purpose of the website is to display and offer and sell all available course
 
 The classes themselves will also be held online via an online communication tool (i.e. Zoom).
 
+The users benefit from the business as they can purchase online courses to learn German. They can choose courses that suit their level, learning goal (i.e. Business, Holiday) and schedule.
+
 ### SEO
 #### Keywords
 
